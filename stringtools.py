@@ -65,10 +65,27 @@ def order(sentence: str, pl_indexing: bool = False, del_index_numerals: bool = F
 		return ""
 
 def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
-	'''Checks if inputed string is pangram (It has every letter from aplhabet) e.g:\n
+	'''Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:\n
 	'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' -- True\n
 	'Hello beautiful world!' --> False'''
-	#Creating set of characters from inputed string
+	#Creating set of characters from inputed string (sentence)
 	sentence_set = set(sentence.lower())
 	#Checking if created set contains all characters from our alphabet, and returning bool
 	return all(char in sentence_set for char in alphabet)
+
+def camelCase(word: str, reverse_: bool = False) -> str:
+	'''Splits camelCase into two words e.g:\n
+	"CamelCase" --> "Camel Case"\n
+	reverse_=True will give:\n
+	"Camel Case" --> "CamelCase"'''
+	str_ = ""
+	for index_, char in enumerate(word):
+		if char.isupper() and index_:
+			str_ += f" {char[0]}"
+		else:
+			str_ += char
+	if reverse_ is False:
+		str_ = " ".join(str_.split())
+	else:
+		str_ = "".join(str_.split())
+	return str_
