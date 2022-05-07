@@ -66,10 +66,9 @@ def order(sentence: str, pl_indexing: bool = False, del_index_numerals: bool = F
 
 def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
 	'''Checks if inputed string is pangram (It has every letter from aplhabet) e.g:\n
-	'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' --> True\n
+	'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' -- True\n
 	'Hello beautiful world!' --> False'''
+	#Creating set of characters from inputed string
 	sentence_set = set(sentence.lower())
-	if all(item in sentence_set for item in alphabet):
-		return True
-	else:
-		return False
+	#Checking if created set contains all characters from our alphabet, and returning bool
+	return all(char in sentence_set for char in alphabet)
