@@ -22,13 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
-from functools import reduce
 import re
+import string
+from functools import reduce
 def order(sentence: str, pl_indexing: bool = False, del_index_numerals: bool = False) -> str:
-	'''Sorts inputed string by it's number in words:\n
+	'''Sorts inputed string by it's number in words e.g:\n
 	name4 wo2rld Hello1 my3 is5 6Alex\n
 	--> Hello1 wo2rld my3 name4 is5 6Alex\n
-	And empty string will return empty string.'''
+	"" --> ""'''
 	if sentence != "":
 		#Creating list from string
 		list_words = sentence.split(" ")
@@ -62,3 +63,19 @@ def order(sentence: str, pl_indexing: bool = False, del_index_numerals: bool = F
 		return new_list
 	else:
 		return ""
+
+def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
+	'''Checks if inputed string is pangram (It has every letter from aplhabet) e.g:\n
+	'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' --> True\n
+	'Hello beautiful world!' --> False'''
+	char_set = set()
+
+	sentence = sentence.lower()
+	alphabet = alphabet.lower()
+
+	for char in sentence:
+		if char in alphabet:
+			char_set.add(char)
+		if len(char_set) == len(alphabet):
+			return True
+	return False
