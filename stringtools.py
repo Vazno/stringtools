@@ -68,14 +68,8 @@ def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
 	'''Checks if inputed string is pangram (It has every letter from aplhabet) e.g:\n
 	'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' --> True\n
 	'Hello beautiful world!' --> False'''
-	char_set = set()
-
-	sentence = sentence.lower()
-	alphabet = alphabet.lower()
-
-	for char in sentence:
-		if char in alphabet:
-			char_set.add(char)
-		if len(char_set) == len(alphabet):
-			return True
-	return False
+	sentence_set = set(sentence.lower())
+	if all(item in sentence_set for item in alphabet):
+		return True
+	else:
+		return False
