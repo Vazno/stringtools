@@ -30,39 +30,36 @@ def order(sentence: str, pl_indexing: bool = False, del_index_numerals: bool = F
 	name4 wo2rld Hello1 my3 is5 6Alex\n
 	--> Hello1 wo2rld my3 name4 is5 6Alex\n
 	"" --> ""'''
-	if sentence != "":
-		#Creating list from string
-		list_words = sentence.split(" ")
+	#Creating list from string
+	list_words = sentence.split(" ")
 
-		#Creating list with noting ["0", "0", "0", "0"] to insert items by index assignment later
-		new_list = (["0"]*len(list_words))
+	#Creating list with noting ["0", "0", "0", "0"] to insert items by index assignment later
+	new_list = (["0"]*len(list_words))
 
-		#If sentence is using programming language indexing sets pl_value to 0 
-		pl_value = 1
-		if pl_indexing == True:
-			pl_value = 0
-		
-		#Inserting items to new_list, and sorting by it's number
-		#If del_index_numerals is True, deletes index numerals in words, leaving only unrelated (second) numbers: 
-		# "1hell326264o" will give "hell326264o"
-		if del_index_numerals:
-			for word in list_words:
-				digit_ = (re.findall("\d+", str(word)))
-				word = word.replace(digit_[0], "")
-				digit_ = int(digit_[0])
-				digit_ -= pl_value
-				new_list[digit_] = word
-		else:
-			for word in list_words:
-				digit_ = (re.findall("\d+", str(word)))
-				digit_ = int(digit_[0])-pl_value
-				new_list[digit_] = word
-
-		#Converting back to the string
-		new_list = reduce(lambda char1, char2: char1 + char2, " ".join(new_list))
-		return new_list
+	#If sentence is using programming language indexing sets pl_value to 0 
+	pl_value = 1
+	if pl_indexing:
+		pl_value = 0
+	
+	#Inserting items to new_list, and sorting by it's number
+	#If del_index_numerals is True, deletes index numerals in words, leaving only unrelated (second) numbers: 
+	# "1hell326264o" will give "hell326264o"
+	if del_index_numerals:
+		for word in list_words:
+			digit_ = (re.findall("\d+", str(word)))
+			word = word.replace(digit_[0], "")
+			digit_ = int(digit_[0])
+			digit_ -= pl_value
+			new_list[digit_] = word
 	else:
-		return ""
+		for word in list_words:
+			digit_ = (re.findall("\d+", str(word)))
+			digit_ = int(digit_[0])-pl_value
+			new_list[digit_] = word
+
+	#Converting back to the string
+	new_list = reduce(lambda char1, char2: char1 + char2, " ".join(new_list))
+	return new_list
 
 def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
 	'''Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:\n
@@ -84,8 +81,22 @@ def camelCase(word: str, reverse_: bool = False) -> str:
 			str_ += f" {char[0]}"
 		else:
 			str_ += char
-	if reverse_ is False:
+	if not reverse_:
 		str_ = " ".join(str_.split())
 	else:
 		str_ = "".join(str_.split())
 	return str_
+
+def count_char(sentence: str, lowercase: bool = False) -> dict:
+	'''Returns dictionary with every character counted e.g:\n
+	"OOPp" --> {"O": 2, "P": 1, "p": 1}\n
+	lowercase=True, will give:\n
+	"OOPp" -> {"o": 2, "p": 2}'''
+	if not lowercase:
+		string_dict = dict.fromkeys(set(sentence), 0)
+	else:
+		sentence = sentence.lower()
+		string_dict = dict.fromkeys(set(sentence), 0)
+	for char in sentence:
+		string_dict[char] += 1
+	return string_dict

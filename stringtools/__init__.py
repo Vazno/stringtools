@@ -1,0 +1,1 @@
+from .myfunctions import order, is_pangram, camelCase, count_char
