@@ -25,6 +25,8 @@ SOFTWARE.
 import re
 import string
 from functools import reduce
+from collections import Counter
+
 def order(sentence: str, pl_indexing: bool = False, del_index_numerals: bool = False) -> str:
 	'''Sorts inputed string by it's number in words e.g:\n
 	name4 wo2rld Hello1 my3 is5 6Alex\n
@@ -92,11 +94,17 @@ def count_char(sentence: str, lowercase: bool = False) -> dict:
 	"OOPp" --> {"O": 2, "P": 1, "p": 1}\n
 	lowercase=True, will give:\n
 	"OOPp" -> {"o": 2, "p": 2}'''
-	if not lowercase:
-		string_dict = dict.fromkeys(set(sentence), 0)
+	if lowercase:
+		return dict(Counter(sentence.lower()))
 	else:
-		sentence = sentence.lower()
-		string_dict = dict.fromkeys(set(sentence), 0)
-	for char in sentence:
-		string_dict[char] += 1
-	return string_dict
+		return dict(Counter(sentence))
+
+	# if not lowercase:
+	# 	string_dict = dict.fromkeys(set(sentence), 0)
+	# else:
+	# 	sentence = sentence.lower()
+	# 	string_dict = dict.fromkeys(set(sentence), 0)
+	# for char in sentence:
+	# 	string_dict[char] += 1
+	# return string_dict
+
