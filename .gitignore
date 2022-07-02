@@ -1,6 +1,3 @@
-MANIFEST.in
-pyproject.toml
-setup.cfg
 __pycache__/
 .pytest_cache/
 .vscode/
