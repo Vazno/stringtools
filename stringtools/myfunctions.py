@@ -30,10 +30,11 @@ from collections import Counter
 
 
 def order(sentence: str, pl_indexing: bool = False, del_index_numerals: bool = False) -> str:
-	'''Sorts inputed string by it's number in words e.g:\n
-	name4 wo2rld Hello1 my3 is5 6Alex\n
-	--> Hello1 wo2rld my3 name4 is5 6Alex\n
-	"" --> ""'''
+	'''Sorts inputed string by it's number in words e.g:
+	
+	"name4 wo2rld Hello1 my3 is5 6Alex" -> "Hello1 wo2rld my3 name4 is5 6Alex"
+	
+	"" -> ""'''
 	#Creating list from string
 	list_words = sentence.split(" ")
 
@@ -66,19 +67,21 @@ def order(sentence: str, pl_indexing: bool = False, del_index_numerals: bool = F
 	return new_list
 
 def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
-	'''Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:\n
-	'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' -> True\n
-	'Hello beautiful world!' -> False'''
+	'''Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
+		
+	- 'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' -> True
+		
+	- 'Hello beautiful world!' -> False'''
 	#Creating set of characters from inputed string (sentence)
 	sentence_set = set(sentence.lower())
 	#Checking if created set contains all characters from our alphabet, and returning bool
 	return all(char in sentence_set for char in alphabet)
 
 def camelCase(word: str, reverse_: bool = False) -> str:
-	'''Splits camelCase into two words e.g:\n
-	"CamelCase" -> "Camel Case"\n
-	reverse_=True will give:\n
-	"Camel Case" -> "CamelCase"'''
+	'''Splits camelCase into two words e.g:
+		"CamelCase" -> "Camel Case"
+	reverse_=True will give:
+		"Camel Case" -> "CamelCase"'''
 	str_ = ""
 	for index_, char in enumerate(word):
 		if char.isupper() and index_:
@@ -92,10 +95,10 @@ def camelCase(word: str, reverse_: bool = False) -> str:
 	return str_
 
 def count_char(sentence: str, lowercase: bool = False) -> dict:
-	'''Returns dictionary with every character counted e.g:\n
-	"OOPp" -> {"O": 2, "P": 1, "p": 1}\n
-	lowercase=True, will give:\n
-	"OOPp" -> {"o": 2, "p": 2}'''
+	'''Returns dictionary with every character counted e.g:
+		"OOPp" -> {"O": 2, "P": 1, "p": 1}
+	lowercase=True, will give:
+		"OOPp" -> {"o": 2, "p": 2}'''
 	if lowercase:
 		return dict(Counter(sentence.lower()))
 	else:
@@ -103,8 +106,7 @@ def count_char(sentence: str, lowercase: bool = False) -> dict:
 
 def bricks(sentence: str) -> str:
 	'''Returns bricked version of string
-
-	"Hello world!" -> "HeLlO WoRlD!"'''
+	- "Hello world!" -> "HeLlO WoRlD!"'''
 	new_sentence = ''.join(x + y for x, y in zip(sentence[0::2].upper(), sentence[1::2].lower()))
 	if len(sentence) % 2 == 0:
 		pass
@@ -116,7 +118,6 @@ def bricks(sentence: str) -> str:
 		new_sentence += sentence[-1]
 	return new_sentence
 
-
 def generate_nick(
 	length = 5,
 	vowels = ['a', 'e', 'i', 'o', 'u'],
@@ -124,6 +125,7 @@ def generate_nick(
 	consonant_graphems = ['rr', 'sh', 'th', 'gu', 'zz', 'ff', 'sc', 'ft', 'dd', 'wr', 'tt', 'tu', 'qu', 'rh', 'ss', 'bb', 'lm', 'pn', 'pp', 'lf', 'se', 'mn', 'ti', 'll', 'ph', 'ps', 'te', 'kn', 'ch', 'mm', 'ck', 'gh', 'gn', 'wh', 'ed', 'mb', 'sci', 'si', 'dge', 've', 'ce', 'cc', 'ge', 'st', 'lk', 'gg', 'tch', 'ze', 'gue', 'nn', 'ci', 'di'],
 	consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']) -> str:
 	'''Generate nicknames by inputed vowels, consonants, and other sounds.'''
+
 	# Picking the first letter of name
 	nickname = random.choice(random.choice([vowels, consonants]))
 	previous_char = nickname
