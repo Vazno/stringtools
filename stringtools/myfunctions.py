@@ -65,8 +65,8 @@ def order(sentence: str, pl_indexing: bool = False, del_index_numerals: bool = F
 
 def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
 	'''Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:\n
-	'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' -- True\n
-	'Hello beautiful world!' --> False'''
+	'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' -> True\n
+	'Hello beautiful world!' -> False'''
 	#Creating set of characters from inputed string (sentence)
 	sentence_set = set(sentence.lower())
 	#Checking if created set contains all characters from our alphabet, and returning bool
@@ -74,9 +74,9 @@ def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
 
 def camelCase(word: str, reverse_: bool = False) -> str:
 	'''Splits camelCase into two words e.g:\n
-	"CamelCase" --> "Camel Case"\n
+	"CamelCase" -> "Camel Case"\n
 	reverse_=True will give:\n
-	"Camel Case" --> "CamelCase"'''
+	"Camel Case" -> "CamelCase"'''
 	str_ = ""
 	for index_, char in enumerate(word):
 		if char.isupper() and index_:
@@ -91,7 +91,7 @@ def camelCase(word: str, reverse_: bool = False) -> str:
 
 def count_char(sentence: str, lowercase: bool = False) -> dict:
 	'''Returns dictionary with every character counted e.g:\n
-	"OOPp" --> {"O": 2, "P": 1, "p": 1}\n
+	"OOPp" -> {"O": 2, "P": 1, "p": 1}\n
 	lowercase=True, will give:\n
 	"OOPp" -> {"o": 2, "p": 2}'''
 	if lowercase:
@@ -99,12 +99,17 @@ def count_char(sentence: str, lowercase: bool = False) -> dict:
 	else:
 		return dict(Counter(sentence))
 
-	# if not lowercase:
-	# 	string_dict = dict.fromkeys(set(sentence), 0)
-	# else:
-	# 	sentence = sentence.lower()
-	# 	string_dict = dict.fromkeys(set(sentence), 0)
-	# for char in sentence:
-	# 	string_dict[char] += 1
-	# return string_dict
+def bricks(sentence: str) -> str:
+	'''Returns bricked version of string
 
+	"Hello world!" -> "HeLlO WoRlD!"'''
+	new_sentence = ''.join(x + y for x, y in zip(sentence[0::2].upper(), sentence[1::2].lower()))
+	if len(sentence) % 2 == 0:
+		pass
+	elif new_sentence[-1].isupper():
+		new_sentence[-1] += sentence[-1].lower()
+	elif new_sentence[-1].islower():
+		new_sentence += sentence[-1].upper()
+	else:
+		new_sentence += sentence[-1]
+	return new_sentence

@@ -1,1 +1,1 @@
-from .myfunctions import order, is_pangram, camelCase, count_char
+from .myfunctions import order, is_pangram, camelCase, count_char, bricks
