@@ -4,6 +4,8 @@ Useful tool to edit strings in many ways.
 - order
 - is_pangram
 - camelCase
+- bricks
+- generate_nick
 ## Installation:
 ``pip install stringtools``
 

@@ -24,8 +24,10 @@ SOFTWARE.
 
 import re
 import string
+import random
 from functools import reduce
 from collections import Counter
+
 
 def order(sentence: str, pl_indexing: bool = False, del_index_numerals: bool = False) -> str:
 	'''Sorts inputed string by it's number in words e.g:\n
@@ -113,3 +115,34 @@ def bricks(sentence: str) -> str:
 	else:
 		new_sentence += sentence[-1]
 	return new_sentence
+
+
+def generate_nick(
+	length = 5,
+	vowels = ['a', 'e', 'i', 'o', 'u'],
+	vowel_graphems = ['eir', 'ay', 'eau', 'au', 'ayer', 'ei', 'igh', 'aw', 'ow', 'ore', 'ou', 'er', 'ae', 'augh', 'ough', 'oo', 'uoy', 'oar', 'our', 'eer', 'et', 'eigh', 'ey', 'ye', 'ai', 'ew', 'eo', 'uy', 'u', 'air', 'oew', 'oa', 'ur', 'oe', 'ie', 'are', 'ir', 'ea', 'oy', 'aigh', 'or', 'ui', 'yr', 'ar', 'oor', 'ier', 'ue', 'ee', 'oi', 'ear', 'ho', 'ure', 'is', 'ere'],
+	consonant_graphems = ['rr', 'sh', 'th', 'gu', 'zz', 'ff', 'sc', 'ft', 'dd', 'wr', 'tt', 'tu', 'qu', 'rh', 'ss', 'bb', 'lm', 'pn', 'pp', 'lf', 'se', 'mn', 'ti', 'll', 'ph', 'ps', 'te', 'kn', 'ch', 'mm', 'ck', 'gh', 'gn', 'wh', 'ed', 'mb', 'sci', 'si', 'dge', 've', 'ce', 'cc', 'ge', 'st', 'lk', 'gg', 'tch', 'ze', 'gue', 'nn', 'ci', 'di'],
+	consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']) -> str:
+	'''Generate nicknames by inputed vowels, consonants, and other sounds.'''
+	# Picking the first letter of name
+	nickname = random.choice(random.choice([vowels, consonants]))
+	previous_char = nickname
+	
+	# Picking the rest of nickname
+	for i in range(length-1):
+		while len(nickname) != length:
+			if len(nickname) > length:
+				nickname = random.choice(random.choice([vowels, vowel_graphems, consonants, consonant_graphems]))
+				previous_char = nickname
+
+			# If the last letter is vowel adding consonant to the end
+			if previous_char in vowels or previous_char in vowel_graphems:
+				char = random.choice(random.choice([consonants, consonant_graphems]))
+				previous_char = char
+
+			# If the last letter is consonant adding vowel to the end
+			else:
+				char = random.choice(random.choice([vowels, vowel_graphems]))
+				previous_char = char
+			nickname += char
+	return nickname.capitalize()
