@@ -3,10 +3,10 @@ name: Run tests
 on:
   push:
     branches:
-      - "master"
+      - "main"
   pull_request:
     branches:
-      - "master"
+      - "main"
 
 jobs:
   test:
@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         # Run in all these versions of Python
-        python-version: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10, 3.11]
+        python-version: [3.6, 3.7, 3.8, 3.9, 3.10.0]
 
     steps:
         # Checkout the latest code from the repo
@@ -24,6 +24,7 @@ jobs:
         # Setup which version of Python to use
       - name: Set Up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
+
         with:
           python-version: ${{ matrix.python-version }}
         # Display the Python version being used
