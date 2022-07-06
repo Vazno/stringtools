@@ -21,24 +21,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
-
-from random import choice
+import random
 import string
-def test_bricks():
-	from stringtools import bricks
-	# Generating random string
-	_string = ""
+
+def test_is_pangram():
+	from stringtools import is_pangram
+	random_letters = ""
+	second_random_letters = ""
 	for i in range(50):
-		_string += choice(list(string.printable))
-	# Creating bricked version
-	bricked_string = ""
-	_counter = 0
-	# Generating bricked strings from randomly generated string
-	for char in _string:
-		if _counter == 0:
-			bricked_string += char.upper()
-			_counter +=1
-		else:
-			bricked_string += char.lower()
-			_counter = 0
-	assert bricked_string == bricks(_string)
+		random_letters += random.choice(string.printable)
+	assert is_pangram(random_letters, random_letters)
+
+	for i in range(50):
+		second_random_letters += random.choice(string.printable)
+	
+	assert not is_pangram(second_random_letters, random_letters)

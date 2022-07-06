@@ -75,24 +75,27 @@ def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
 	#Creating set of characters from inputed string (sentence)
 	sentence_set = set(sentence.lower())
 	#Checking if created set contains all characters from our alphabet, and returning bool
-	return all(char in sentence_set for char in alphabet)
+	return all(char in sentence_set for char in alphabet.lower())
 
 def camelCase(word: str, reverse_: bool = False) -> str:
 	'''Splits camelCase into two words e.g:
 		"CamelCase" -> "Camel Case"
 	reverse_=True will give:
 		"Camel Case" -> "CamelCase"'''
-	str_ = ""
-	for index_, char in enumerate(word):
-		if char.isupper() and index_:
-			str_ += f" {char[0]}"
-		else:
-			str_ += char
-	if not reverse_:
-		str_ = " ".join(str_.split())
+	if word == "":
+		return word
 	else:
-		str_ = "".join(str_.split())
-	return str_
+		str_ = ""
+		for index_, char in enumerate(word):
+			if char.isupper() and index_:
+				str_ += f" {char[0]}"
+			else:
+				str_ += char
+		if not reverse_:
+			str_ = " ".join(str_.split())
+		else:
+			str_ = "".join(str_.split())
+		return str_
 
 def count_char(sentence: str, lowercase: bool = False) -> dict:
 	'''Returns dictionary with every character counted e.g:
