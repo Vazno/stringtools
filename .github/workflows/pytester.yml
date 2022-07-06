@@ -24,6 +24,7 @@ jobs:
         # Setup which version of Python to use
       - name: Set Up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
+
         with:
           python-version: ${{ matrix.python-version }}
         # Display the Python version being used
@@ -31,7 +32,7 @@ jobs:
         run: python -c "import sys; print(sys.version)"
         # Install the package using the setup.py
       - name: Install package
-        run: python setup.py install
+        run: pip install stringtools
         # Install pytest (you can use some other testing utility)
       - name: Install pytest
         run: |
