@@ -1,4 +1,7 @@
-# 📝 stringtools 
+# 📝 stringtools
+
+[![Run tests](https://github.com/Vazno/stringtools/actions/workflows/pytester.yml/badge.svg)](https://github.com/Vazno/stringtools/actions/workflows/pytester.yml)
+
 Useful tool to edit strings in many ways.
 #### It has tons of functions especially built to be fast and stable ⚡.
 - order
@@ -42,7 +45,6 @@ stringtools.camelCase("CamelCase")
 # -> "Camel Case"
 stringtools.camelCase("Camel Case", reverse_=True) 
 #-> "CamelCase"
-e.t.c...
 ```
 
 
