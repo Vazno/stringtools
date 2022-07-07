@@ -6,7 +6,6 @@ Useful tool to edit strings in many ways.
 #### It has tons of functions, and classes especially built to be fast and stable ⚡.
 - order
 - is_pangram
-- camelCase
 - count_char
 - bricks
 - generate_nick
@@ -24,16 +23,6 @@ is_pangram('Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.')
 # -> True
 is_pangram('Hello beautiful world!') 
 # -> False
-```
-
-
-## ```camelCase()```
-#### Splits camelCase into two words e.g.
-```python
-stringtools.camelCase("CamelCase")
-# -> "Camel Case"
-stringtools.camelCase("Camel Case", reverse_=True) 
-#-> "CamelCase"
 ```
 
 

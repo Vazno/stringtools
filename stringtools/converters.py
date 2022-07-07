@@ -22,27 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
-
-def camelCase(word: str, reverse_: bool = False) -> str:
-	'''Splits camelCase into two words e.g:
-		"CamelCase" -> "Camel Case"
-	reverse_=True will give:
-		"Camel Case" -> "CamelCase"'''
-	if word == "":
-		return word
-	else:
-		str_ = ""
-		for index_, char in enumerate(word):
-			if char.isupper() and index_:
-				str_ += f" {char[0]}"
-			else:
-				str_ += char
-		if not reverse_:
-			str_ = " ".join(str_.split())
-		else:
-			str_ = "".join(str_.split())
-		return str_
-
 def bricks(sentence: str) -> str:
 	'''Returns bricked version of string
 	- "Hello world!" -> "HeLlO WoRlD!"'''
