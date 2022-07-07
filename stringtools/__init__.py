@@ -1,1 +1,4 @@
-from .myfunctions import order, is_pangram, camelCase, count_char, bricks, generate_nick
+''' MIT License Copyright (c) 2022 Beksultan Artykbaev'''
+from .analyse import is_pangram, count_char
+from .converters import order, camelCase, bricks
+from .generators import generate_nick, Generate_password

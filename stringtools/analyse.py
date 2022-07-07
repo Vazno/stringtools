@@ -21,22 +21,30 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
-import random
+
 import string
-import pytest
-@pytest.mark.parametrize("TEST_SIZE", [random.randint(100)])
-def test_is_pangram(TEST_SIZE):
-	from stringtools import is_pangram
-	random_letters = ""
-	second_random_letters = ""
-
-	for i in range(TEST_SIZE):
-		random_letters += random.choice(string.printable)
-	# Checking if randomly generated letters in alphabet with the same letters
-	assert is_pangram(random_letters, random_letters) # -> True
+from collections import Counter
 
 
-	for i in range(TEST_SIZE):
-		second_random_letters += random.choice(string.printable)
-	# Checking if randomly generated letters in alphabet with other randomly generated letters
-	assert not is_pangram(second_random_letters, random_letters) # -> False
+def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
+	'''Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
+		
+	- 'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' -> True
+		
+	- 'Hello beautiful world!' -> False'''
+	#Creating set of characters from inputed string (sentence)
+	sentence_set = set(sentence.lower())
+	#Checking if created set contains all characters from our alphabet, and returning bool
+	return all(char in sentence_set for char in alphabet.lower())
+
+
+def count_char(sentence: str, lowercase: bool = False) -> dict:
+	'''Returns dictionary with every character counted e.g:
+		"OOPp" -> {"O": 2, "P": 1, "p": 1}
+	lowercase=True, will give:
+		"OOPp" -> {"o": 2, "p": 2}'''
+	if lowercase:
+		return dict(Counter(sentence.lower()))
+	else:
+		return dict(Counter(sentence))
+
