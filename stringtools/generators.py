@@ -24,6 +24,7 @@ SOFTWARE.
 import string
 import random
 from secrets import choice
+from typing import List
 
 def generate_nick(
 	length = 5,
@@ -90,48 +91,47 @@ class Generate_password():
 		self.lowercase = lowercase
 		self.uppercase = uppercase
 
-
-	def __create_main_list(self):
-		self.main_list = []
-		if self.english:
-			self.main_list.append(list(string.ascii_uppercase))
-		if self.symbols:
-			self.main_list.append(list(string.punctuation))
-		if self.numerals:
-			self.main_list.append(list(string.digits))
-		if self.own_symbols:
-			self.own_symbols = list(set(self.own_symbols))
-			self.main_list.append(self.own_symbols)
-
-	def __exclude_similar(self):
-		for _list in self.main_list:
-			for char in _list:
-				if char in self.similar_chars:
-					_list.remove(char)
-	
-	def __upper_lower(self, char):
-		if self.lowercase and self.uppercase:
-			return choice([char.lower(), char.upper()])
-		elif self.lowercase and not self.uppercase:
-			return char.lower()
-		elif self.uppercase and not self.lowercase:
-			return char.upper()
-		elif not self.lowercase and not self.uppercase:
-			return char
-
-	def __generate_password(self):
-		password_holder = ""
-		for i in range(self.length):
-			random_list = choice(self.main_list)
-			random_char = choice(random_list)
-			password_holder += self.__upper_lower(random_char)
-		return password_holder
-
 	def __str__(self):
 		if self.length != 0:
-			self.__create_main_list()
+			# Appending all lists with alphabets to main list
+			main_list = []
+			if self.english:
+				main_list.append(list(string.ascii_uppercase))
+			if self.symbols:
+				main_list.append(list(string.punctuation))
+			if self.numerals:
+				main_list.append(list(string.digits))
+			if self.own_symbols:
+				self.own_symbols = list(set(self.own_symbols))
+				main_list.append(self.own_symbols)
+
+			# Excluding similar characters if it's set to True
 			if self.exclude_similarities:
-				self.__exclude_similar()
-			return self.__generate_password()
+				self.__exclude_similar(main_list, Generate_password.similar_chars)
+
+
+			password_holder = ""
+			for i in range(self.length):
+				random_char = choice(choice(main_list)) # Choosing random list, then choosing random character from list
+				password_holder += self.__upper_lower(random_char, self.lowercase, self.uppercase)
+			return password_holder
 		else:
 			return ""
+
+	def __exclude_similar(self, main_list: List[List], chars_to_delete: List):
+		# Deletes inputed character from list containing lists
+		for _list in main_list:
+			for char in _list:
+				if char in chars_to_delete:
+					_list.remove(char)
+	
+	def __upper_lower(self, char, lowercase, uppercase):
+		'''Checking for upper and lowercase boolean values, and returning character based on input values'''
+		if lowercase and uppercase:
+			return choice([char.lower(), char.upper()])
+		elif lowercase and not uppercase:
+			return char.lower()
+		elif uppercase and not lowercase:
+			return char.upper()
+		elif not lowercase and not uppercase:
+			return char
