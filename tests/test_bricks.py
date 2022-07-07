@@ -22,14 +22,16 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
-from random import choice
 import string
-def test_bricks():
+import pytest
+import random
+@pytest.mark.parametrize("TEST_SIZE", [random.randint(1, 100)])
+def test_bricks(TEST_SIZE):
 	from stringtools import bricks
 	# Generating random string
 	_string = ""
-	for i in range(50):
-		_string += choice(list(string.printable))
+	for i in range(TEST_SIZE):
+		_string += random.choice(list(string.printable))
 	# Creating bricked version
 	bricked_string = ""
 	_counter = 0

@@ -24,9 +24,9 @@ SOFTWARE.
 import random
 import string
 import pytest
-@pytest.mark.parametrize("PASSWORD_TEST_SIZE", [100])
-def test_Generate_password(PASSWORD_TEST_SIZE: int):
-	from stringtools.generators import Generate_password
+@pytest.mark.parametrize("PASSWORD_TEST_SIZE", [random.randint(1, 100)])
+def test_Generate_password(PASSWORD_TEST_SIZE):
+	from stringtools import Generate_password
 	assert str(Generate_password(length=0)) == ""
 
 	# Checking if exclude_similarities work
@@ -40,9 +40,9 @@ def test_Generate_password(PASSWORD_TEST_SIZE: int):
 
 
 # Testing own_symbols setting
-@pytest.mark.parametrize("PASSWORD_TEST_SIZE", [100])
-def test_Generate_password_own_symbols(PASSWORD_TEST_SIZE: int):
-	from stringtools.generators import Generate_password
+@pytest.mark.parametrize("PASSWORD_TEST_SIZE", [random.randint(1, 100)])
+def test_Generate_password_own_symbols(PASSWORD_TEST_SIZE):
+	from stringtools import Generate_password
 	# Storing own symbols
 	random_own = []
 
