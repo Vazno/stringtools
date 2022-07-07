@@ -24,7 +24,7 @@ SOFTWARE.
 import random
 import string
 import pytest
-@pytest.mark.parametrize("TEST_SIZE", [random.randint(100)])
+@pytest.mark.parametrize("TEST_SIZE", [random.randint(1, 100)])
 def test_is_pangram(TEST_SIZE):
 	from stringtools import is_pangram
 	random_letters = ""
