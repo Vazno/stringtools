@@ -13,20 +13,8 @@ Useful tool to edit strings in many ways.
 ## Installation:
 ``pip install stringtools``
 
+
 ## Usage/Examples
-
-
-## ```order()```
-```python
-import stringtools
-stringtools.order("worl1d name5 He0llo is3 what2 your4 ?6", 
-    pl_indexing=True, del_index_numerals=True)
-# -> "Hello world what is your name ?"
-
-stringtools.order("worl1d name5 He0llo is3 what2 your4 ?6", True, False)
-# -> "He0llo worl1d what2 is3 your4 name5 ?6"
-```
-
 
 ## ```ispangram()```
 #### Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
@@ -95,6 +83,17 @@ for i in range(20):
 # Eceuy
 # Elere
 ```
+
+
+
+## ```Generate_password````
+Generate very strong passwords.
+You can choose these options for password:
+- English (abcd...)
+- Numerals (1234...)
+- Special Symbols ('`<*...)
+- Own symbols (Any)
+###### Exclude similar characters (1, l, L, 0, o, O, etc.)
 
 ## Authors
 

@@ -24,7 +24,7 @@ SOFTWARE.
 import random
 import string
 import pytest
-@pytest.mark.parametrize("PASSWORD_TEST_SIZE", [random.randint(1, 100)])
+@pytest.mark.parametrize("PASSWORD_TEST_SIZE", [random.randint(50, 100)])
 def test_Generate_password(PASSWORD_TEST_SIZE):
 	from stringtools import Generate_password
 	assert str(Generate_password(length=0)) == ""
@@ -40,7 +40,7 @@ def test_Generate_password(PASSWORD_TEST_SIZE):
 
 
 # Testing own_symbols setting
-@pytest.mark.parametrize("PASSWORD_TEST_SIZE", [random.randint(1, 100)])
+@pytest.mark.parametrize("PASSWORD_TEST_SIZE", [random.randint(50, 100)])
 def test_Generate_password_own_symbols(PASSWORD_TEST_SIZE):
 	from stringtools import Generate_password
 	# Storing own symbols

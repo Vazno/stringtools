@@ -25,7 +25,7 @@ SOFTWARE.
 import string
 import pytest
 import random
-@pytest.mark.parametrize("TEST_SIZE", [random.randint(1, 100)])
+@pytest.mark.parametrize("TEST_SIZE", [random.randint(50, 100)])
 def test_bricks(TEST_SIZE):
 	from stringtools import bricks
 	# Generating random string
