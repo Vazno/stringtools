@@ -28,19 +28,21 @@ import random
 @pytest.mark.parametrize("TEST_SIZE", [random.randint(50, 100)])
 def test_bricks(TEST_SIZE):
 	from stringtools import bricks
-	# Generating random string
+	
 	_string = ""
+
+	# Generating random string
 	for i in range(TEST_SIZE):
 		_string += random.choice(list(string.printable))
-	# Creating bricked version
+
+	# storing bricked version
 	bricked_string = ""
-	_counter = 0
+
+
 	# Generating bricked strings from randomly generated string
-	for char in _string:
-		if _counter == 0:
-			bricked_string += char.upper()
-			_counter +=1
+	for char in enumerate(_string):
+		if char[0] % 2 == 0:
+			bricked_string += char[1].upper()
 		else:
-			bricked_string += char.lower()
-			_counter = 0
+			bricked_string += char[1].lower()
 	assert bricked_string == bricks(_string)

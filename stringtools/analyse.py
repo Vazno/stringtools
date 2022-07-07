@@ -43,8 +43,10 @@ def count_char(sentence: str, lowercase: bool = False) -> dict:
 		"OOPp" -> {"O": 2, "P": 1, "p": 1}
 	lowercase=True, will give:
 		"OOPp" -> {"o": 2, "p": 2}'''
-	if lowercase:
-		return dict(Counter(sentence.lower()))
+	if sentence != "":
+		if lowercase:
+			return dict(Counter(sentence.lower()))
+		else:
+			return dict(Counter(sentence))
 	else:
-		return dict(Counter(sentence))
-
+		return dict()
