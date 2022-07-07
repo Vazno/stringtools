@@ -3,13 +3,14 @@
 [![Run tests](https://github.com/Vazno/stringtools/actions/workflows/pytester.yml/badge.svg?)](https://github.com/Vazno/stringtools/actions/workflows/pytester.yml)
 
 Useful tool to edit strings in many ways.
-#### It has tons of functions especially built to be fast and stable ⚡.
+#### It has tons of functions, and classes especially built to be fast and stable ⚡.
 - order
 - is_pangram
 - camelCase
 - count_char
 - bricks
 - generate_nick
+- Generate_password
 ## Installation:
 ``pip install stringtools``
 
