@@ -22,8 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
-from audioop import reverse
-
 
 def camelCase(word: str, reverse_: bool = False) -> str:
 	'''Splits camelCase into two words e.g:
