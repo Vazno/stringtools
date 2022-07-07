@@ -87,8 +87,8 @@ for i in range(20):
 
 
 ## ```Generate_password()```
-Generate very strong passwords.
-You can choose these options for password:
+#### Generate very strong passwords.
+#### You can choose these options for password:
 - English (abcd...)
 - Numerals (1234...)
 - Special Symbols ('`<*...)
