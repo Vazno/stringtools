@@ -37,6 +37,9 @@ def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
 	#Checking if created set contains all characters from our alphabet, and returning bool
 	return all(char in sentence_set for char in alphabet.lower())
 
+def is_heterogram(sentence: str) -> bool:
+	'''A heterogram is a string in which no letter of the alphabet occurs more than once'''
+	return all(False for key, value in dict(Counter(sentence)).items() if key.isalpha() and value != 1)
 
 def count_char(sentence: str, lowercase: bool = False) -> dict:
 	'''Returns dictionary with every character counted e.g:

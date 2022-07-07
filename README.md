@@ -6,6 +6,7 @@ Useful tool to edit strings in many ways.
 #### It has tons of functions, and classes especially built to be fast and stable ⚡.
 - order
 - is_pangram
+- is_heterogram
 - count_char
 - bricks
 - generate_nick
@@ -25,6 +26,12 @@ is_pangram('Hello beautiful world!')
 # -> False
 ```
 
+## ```is_heterogram()```
+#### A heterogram is a string in which no letter of the alphabet occurs more than once
+```python
+is_heterogram("abcd") # -> True
+is_heterogram("abcdd") # -> False
+```
 
 ## ```count_char()```
 #### Returns dictionary with every character counted e.g
