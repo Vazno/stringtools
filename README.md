@@ -4,20 +4,26 @@
 
 Useful tool to edit strings in many ways.
 #### It has tons of functions, and classes especially built to be fast and stable ⚡.
-- order
 - is_pangram
 - is_heterogram
 - count_char
 - bricks
 - generate_nick
 - Generate_password
-## Installation:
+# Installation:
 ``pip install stringtools``
 
 
-## Usage/Examples
+# Usage/Examples
+#### There are 3 categories:
+- analaysers
+- converters
+- generators
 
-## ```ispangram()```
+
+## analaysers:
+
+### ```ispangram()```
 #### Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
 ```python
 is_pangram('Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.') 
@@ -26,14 +32,16 @@ is_pangram('Hello beautiful world!')
 # -> False
 ```
 
-## ```is_heterogram()```
+### ```is_heterogram()```
 #### A heterogram is a string in which no letter of the alphabet occurs more than once
 ```python
-is_heterogram("abcd") # -> True
-is_heterogram("abcdd") # -> False
+is_heterogram("abcd")
+# -> True
+is_heterogram("abcdd")
+# -> False
 ```
 
-## ```count_char()```
+### ```count_char()```
 #### Returns dictionary with every character counted e.g
 ```python
 count_char("OOPp")
@@ -43,7 +51,9 @@ count_char("OOPp")
 ```
 
 
-## ```bricks()```
+## converters:
+
+### ```bricks()```
 #### Returns bricked version of string
 ```python
 bricks("Hello world!")
@@ -52,9 +62,10 @@ bricks("abcdef")
 # -> "AbCdEf"
 ```
 
+## generators:
 
-## ```generate_nick()```
-#### Generate nicknames by inputed vowels, consonants, and other sounds.
+#### ```generate_nick()```
+##### Generate nicknames by inputed vowels, consonants, and other sounds.
 ```python
 for i in range(20):
 	print(stringtools.generate_nick(length=5))
@@ -83,7 +94,7 @@ for i in range(20):
 
 
 
-## ```Generate_password()```
+### ```Generate_password()```
 #### Generate very strong passwords.
 #### You can choose these options for password:
 - English (abcd...)
