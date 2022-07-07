@@ -22,6 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
+from audioop import reverse
+
+
 def camelCase(word: str, reverse_: bool = False) -> str:
 	'''Splits camelCase into two words e.g:
 		"CamelCase" -> "Camel Case"
@@ -46,12 +49,7 @@ def bricks(sentence: str) -> str:
 	'''Returns bricked version of string
 	- "Hello world!" -> "HeLlO WoRlD!"'''
 	new_sentence = ''.join(x + y for x, y in zip(sentence[0::2].upper(), sentence[1::2].lower()))
-	if len(sentence) % 2 == 0:
-		pass
-	elif new_sentence[-1].isupper():
-		new_sentence[-1] += sentence[-1].lower()
-	elif new_sentence[-1].islower():
+
+	if len(sentence) % 2:
 		new_sentence += sentence[-1].upper()
-	else:
-		new_sentence += sentence[-1]
 	return new_sentence
