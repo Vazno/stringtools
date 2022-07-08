@@ -25,13 +25,20 @@ import random
 import string
 from collections import Counter
 import pytest
-@pytest.mark.parametrize("TEST_SIZE", [random.randint(50, 100)])
+@pytest.mark.parametrize("TEST_SIZE", [random.randint(10, 20)])
 def test_is_heterogram(TEST_SIZE):
 	from stringtools import is_heterogram
 	_string = ""
 	for i in range(TEST_SIZE):
 		_string += random.choice(string.printable)
 
+	_count = 0
+
 	for key, value in dict(Counter(_string.lower())).items():
 		if key.isalpha() and value != 1:
 			assert is_heterogram(_string) == False
+			_count += 1
+			break
+
+	if _count == 0:
+		assert is_heterogram(_string) == True
