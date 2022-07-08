@@ -46,7 +46,7 @@ is_heterogram("abcdd")
 ```python
 count_char("OOPp")
 # -> {"O": 2, "P": 1, "p": 1}
-count_char("OOPp")
+count_char("OOPp", lowercase=True)
 # -> {"o": 2, "p": 2}
 ```
 
