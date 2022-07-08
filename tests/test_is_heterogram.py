@@ -21,35 +21,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
-
+import random
 import string
 from collections import Counter
+import pytest
+@pytest.mark.parametrize("TEST_SIZE", [random.randint(50, 100)])
+def test_is_heterogram(TEST_SIZE):
+	from stringtools import is_heterogram
+	_string = ""
+	for i in range(TEST_SIZE):
+		_string += random.choice(string.printable)
 
-
-def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
-	'''Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
-		
-	- 'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' -> True
-		
-	- 'Hello beautiful world!' -> False'''
-	#Checking if created set contains all characters from our alphabet, and returning bool
-	return all(char in set(sentence.lower()) for char in alphabet.lower())
-
-def is_heterogram(sentence: str) -> bool:
-	'''A heterogram is a string in which no letter of the alphabet occurs more than once
-	- is_heterpgram("abcd") -> True
-	- is_heterogram("abcdd") -> False'''
-	return all(False for key, value in dict(Counter(sentence.lower())).items() if key.isalpha() and value != 1)
-
-def count_char(sentence: str, lowercase: bool = False) -> dict:
-	'''Returns dictionary with every character counted e.g:
-		"OOPp" -> {"O": 2, "P": 1, "p": 1}
-	lowercase=True, will give:
-		"OOPp" -> {"o": 2, "p": 2}'''
-	if sentence != "":
-		if lowercase:
-			return dict(Counter(sentence.lower()))
-		else:
-			return dict(Counter(sentence))
-	else:
-		return dict()
+	for key, value in dict(Counter(_string.lower())).items():
+		if key.isalpha() and value != 1:
+			assert is_heterogram(_string) == False
