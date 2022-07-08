@@ -50,5 +50,4 @@ def test_Generate_password_own_symbols(PASSWORD_TEST_SIZE):
 	for i in range(2):
 		random_own.append(random.choice(string.ascii_lowercase))
 
-	assert "".join(random_own) in str(Generate_password(length=PASSWORD_TEST_SIZE, english=False, symbols=False, numerals=False, own_symbols=random_own))
 	assert set(str(Generate_password(length=PASSWORD_TEST_SIZE, english=False, symbols=False, numerals=False, own_symbols=random_own)).lower()) == set(random_own)
