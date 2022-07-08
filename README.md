@@ -9,6 +9,7 @@ Useful tool to edit strings in many ways.
 ### analaysers - Analyse string
 - is_pangram
 - is_heterogram
+- is_anagram
 - count_char
 
 ### converters - Convert one string value to other string value
@@ -42,6 +43,15 @@ is_pangram('Hello beautiful world!')
 is_heterogram("abcd")
 # -> True
 is_heterogram("abcdd")
+# -> False
+```
+
+#### ```is_anagram```
+#### Anagram it's a string that contain all letters from other string 
+```python
+is_anagram("Tom Marvolo Riddle", "I Am Lord Voldemort")
+# -> True
+is_anagram("God", "Good")
 # -> False
 ```
 

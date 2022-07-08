@@ -27,7 +27,8 @@ from collections import Counter
 
 
 def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
-	'''Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
+	'''Checks if inputed string is pangram.
+	(If it has every letter from aplhabet) e.g:
 		
 	- 'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' -> True
 		
@@ -36,10 +37,18 @@ def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
 	return all(char in set(sentence.lower()) for char in alphabet.lower())
 
 def is_heterogram(sentence: str) -> bool:
-	'''A heterogram is a string in which no letter of the alphabet occurs more than once
+	'''Checks if inputed string is heterogram.
+	(A heterogram is a string in which no letter of the alphabet occurs more than once)
 	- is_heterpgram("abcd") -> True
 	- is_heterogram("abcdd") -> False'''
 	return all(False for key, value in dict(Counter(sentence.lower())).items() if key.isalpha() and value != 1)
+
+def is_anagram(first_word: str, second_word: str) -> bool:
+	'''Checks if given word is anagram of other one.
+	(Anagram it's a string that contain all letters from other string)
+	- is_anagram("Listen", "Silent") -> True
+	- is_anagram("123", ("1234")) -> False'''
+	return dict(Counter(first_word.replace(" ", "").lower())) == dict(Counter(second_word.replace(" ", "").lower()))
 
 def count_char(sentence: str, lowercase: bool = False) -> dict:
 	'''Returns dictionary with every character counted e.g:
