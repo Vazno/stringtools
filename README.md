@@ -46,7 +46,7 @@ is_heterogram("abcdd")
 # -> False
 ```
 
-#### ```is_anagram```
+#### ```is_anagram()```
 #### Anagram it's a string that contain all letters from other string 
 ```python
 is_anagram("Tom Marvolo Riddle", "I Am Lord Voldemort")
