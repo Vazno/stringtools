@@ -33,7 +33,8 @@ def generate_nick(
 	consonant_graphems = ['rr', 'sh', 'th', 'gu', 'zz', 'ff', 'sc', 'ft', 'dd', 'wr', 'tt', 'tu', 'qu', 'rh', 'ss', 'bb', 'lm', 'pn', 'pp', 'lf', 'se', 'mn', 'ti', 'll', 'ph', 'ps', 'te', 'kn', 'ch', 'mm', 'ck', 'gh', 'gn', 'wh', 'ed', 'mb', 'sci', 'si', 'dge', 've', 'ce', 'cc', 'ge', 'st', 'lk', 'gg', 'tch', 'ze', 'gue', 'nn', 'ci', 'di'],
 	consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z']) -> str:
 	'''Generate nicknames by inputed vowels, consonants, and other sounds.'''
-
+	if length == 0:
+		return ""
 	# Picking the first letter of name
 	nickname = random.choice(random.choice([vowels, consonants]))
 	previous_char = nickname
@@ -56,7 +57,6 @@ def generate_nick(
 				previous_char = char
 			nickname += char
 	return nickname.capitalize()
-
 class Generate_password():
 	"""Returns randomized password by input settings
 	Character:
