@@ -11,6 +11,7 @@ Useful tool to edit strings in many ways.
 <p id="analysers"></p><table><tr><td><a href="#ispangram">ispangram</a>
 </td><td><a href="#is_heterogram">is_heterogram</a>
 </td><td><a href="#is_anagram">is_anagram</a>
+</td><td><a href="#is_palindrome">is_palindrome</a>
 </td><td><a href="#count_char">count_char</a>
 </td></tr></table>
 
@@ -58,6 +59,15 @@ is_heterogram("abcdd")
 is_anagram("Tom Marvolo Riddle", "I Am Lord Voldemort")
 # -> True
 is_anagram("God", "Good")
+# -> False
+```
+
+#### ```is_palindrome()```
+#### <a href="#analysers">↑</a> A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar.
+```python
+is_palindrome(["r","a","d","a","r"])
+# -> True
+is_palindrome(123)
 # -> False
 ```
 

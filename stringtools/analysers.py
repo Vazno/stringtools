@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
+from functools import reduce
 import string
 from collections import Counter
 
@@ -49,6 +50,23 @@ def is_anagram(first_word: str, second_word: str) -> bool:
 	- is_anagram("Listen", "Silent") -> True
 	- is_anagram("123", ("1234")) -> False'''
 	return dict(Counter(first_word.replace(" ", "").lower())) == dict(Counter(second_word.replace(" ", "").lower()))
+
+def is_palindrome(obj) -> bool:
+	'''Checks if inputed string is palindrome.
+	(A palindrome is a word, number, phrase, or other sequence of characters which reads
+	the same backward as forward, such as madam or racecar.)'''
+	
+	if type(obj) == dict:
+		raise ValueError("Dictionaries don't support duplicate keys. So it can't be palindrome.")
+	if type(obj) == set:
+		raise ValueError("A set does not hold duplicate items. So it can't be palindrome.")
+	# If object is str or List[str] or List[int] or List[str, int]
+	try:
+		obj = [x if type(x) == int else x.lower() for x in obj]
+		return obj == obj[::-1]
+	# If object is int
+	except TypeError:
+		return str(obj) == str(obj)[::-1]
 
 def count_char(sentence: str, lowercase: bool = False) -> dict:
 	'''Returns dictionary with every character counted e.g:
