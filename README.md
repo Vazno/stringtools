@@ -5,6 +5,17 @@
 Useful tool to edit strings in many ways.
 #### It has tons of functions, and classes especially built to be fast and stable ⚡.
 
+
+
+<p id="readme-methods"></p><table><tr><td><a href="#afterstring-string-static">after</a>
+</td><td><a href="ispangram()">ispangram()</a>
+</td></tr></table>
+
+
+
+
+
+
 ## There are 3 categories:
 ### analaysers - Analyse string
 - is_pangram
@@ -29,7 +40,8 @@ Useful tool to edit strings in many ways.
 ## analaysers:
 
 #### ```ispangram()```
-##### Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
+##### <a href="#readme-methods">↑</a> Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
+
 ```python
 is_pangram('Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.') 
 # -> True
