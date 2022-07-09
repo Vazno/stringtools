@@ -24,7 +24,7 @@ SOFTWARE.
 
 import string
 from collections import Counter
-from typing import Union, List
+from typing import Union, Tuple, List
 
 
 def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
@@ -51,7 +51,7 @@ def is_anagram(first_word: str, second_word: str) -> bool:
 	- is_anagram("123", ("1234")) -> False'''
 	return dict(Counter(first_word.replace(" ", "").lower())) == dict(Counter(second_word.replace(" ", "").lower()))
 
-def is_palindrome(obj: Union[List[Union[str, int]], str, int, tuple[Union[str, int]]]) -> bool:
+def is_palindrome(obj: Union[List[Union[str, int]], str, int, Tuple[Union[str, int]]]) -> bool:
 	'''Checks if inputed object is palindrome.
 		Takes Built-in Data Types (list, tuple, str, int)
 	(A palindrome is a word, number, phrase, or other sequence of characters which reads
