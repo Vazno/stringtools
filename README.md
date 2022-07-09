@@ -12,6 +12,7 @@ Useful tool to edit strings in many ways.
 </td><td><a href="#is_heterogram">is_heterogram</a>
 </td><td><a href="#is_anagram">is_anagram</a>
 </td><td><a href="#is_palindrome">is_palindrome</a>
+</td><td><a href="#is_tautogram">is_tautogram</a>
 </td><td><a href="#count_char">count_char</a>
 </td></tr></table>
 
@@ -68,6 +69,14 @@ is_anagram("God", "Good")
 is_palindrome(["r","a","d","a","r"])
 # -> True
 is_palindrome(123)
+# -> False
+```
+#### ```is_tautogram()```
+#### <a href="#analysers">↑</a> A tautogram is a text in which all words start with the same letter.
+```python
+is_tautogram("Crazy cat, cute, cuddly")
+# -> True
+is_tautogram("Crazy mouse, cute, cuddly")
 # -> False
 ```
 

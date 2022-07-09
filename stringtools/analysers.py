@@ -55,12 +55,15 @@ def is_palindrome(obj: Union[List[Union[str, int]], str, int, Tuple[Union[str, i
 	'''Checks if inputed object is palindrome.
 		Takes Built-in Data Types (list, tuple, str, int)
 	(A palindrome is a word, number, phrase, or other sequence of characters which reads
-	the same backward as forward, such as madam or racecar.)'''
+	the same backward as forward, such as madam or racecar.)
+	- is_palindrome("radar") -> True
+	- is_palindrome("word") -> False'''
 	
 	if type(obj) == dict:
 		raise ValueError("Dictionaries don't support duplicate keys. So it can't be palindrome.")
 	if type(obj) == set:
 		raise ValueError("A set does not hold duplicate items. So it can't be palindrome.")
+	
 	# If object is str or List[str] or List[int] or List[str, int] or Tuple[...]
 	try:
 		obj = [x if type(x) == int else x.lower() for x in obj]
@@ -68,6 +71,27 @@ def is_palindrome(obj: Union[List[Union[str, int]], str, int, Tuple[Union[str, i
 	# If object is int
 	except TypeError:
 		return str(obj) == str(obj)[::-1]
+
+def is_tautogram(sentence: str) -> bool:
+	'''Checks if inputed str is tautogram
+	(A tautogram is a text in which all words start with the same letter.)
+	is_tautogram("Crazy cat, cute, cuddly") -> True
+	is_tautogram("Crazy mouse, cute, cuddly") -> False'''
+	list_sentence = sentence.lower().split(" ")
+	def __first_char(_list: List[str]):
+		for word in _list:
+			for char in word:
+				if char.isalpha():
+					return char
+	first_character = __first_char(list_sentence)
+	for word in list_sentence:
+		for char in word:
+			if char.isalpha():
+				if char != first_character:
+					return False
+				break
+	return True
+
 
 def count_char(sentence: str, lowercase: bool = False) -> dict:
 	'''Returns dictionary with every character counted e.g:
