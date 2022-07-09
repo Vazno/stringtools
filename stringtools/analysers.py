@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
-from functools import reduce
 import string
 from collections import Counter
+from typing import Union, List
 
 
 def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
@@ -51,8 +51,9 @@ def is_anagram(first_word: str, second_word: str) -> bool:
 	- is_anagram("123", ("1234")) -> False'''
 	return dict(Counter(first_word.replace(" ", "").lower())) == dict(Counter(second_word.replace(" ", "").lower()))
 
-def is_palindrome(obj) -> bool:
-	'''Checks if inputed string is palindrome.
+def is_palindrome(obj: Union[List[Union[str, int]], str, int, tuple[Union[str, int]]]) -> bool:
+	'''Checks if inputed object is palindrome.
+		Takes Built-in Data Types (list, tuple, str, int)
 	(A palindrome is a word, number, phrase, or other sequence of characters which reads
 	the same backward as forward, such as madam or racecar.)'''
 	
@@ -60,7 +61,7 @@ def is_palindrome(obj) -> bool:
 		raise ValueError("Dictionaries don't support duplicate keys. So it can't be palindrome.")
 	if type(obj) == set:
 		raise ValueError("A set does not hold duplicate items. So it can't be palindrome.")
-	# If object is str or List[str] or List[int] or List[str, int]
+	# If object is str or List[str] or List[int] or List[str, int] or Tuple[...]
 	try:
 		obj = [x if type(x) == int else x.lower() for x in obj]
 		return obj == obj[::-1]
