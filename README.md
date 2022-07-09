@@ -6,29 +6,23 @@ Useful tool to edit strings in many ways.
 #### It has tons of functions, and classes especially built to be fast and stable ⚡.
 
 
-
-<p id="readme-methods"></p><table><tr><td><a href="#ispangram">after</a>
-</td><td><a href="#is_heterogram">is_heterogram</a>
-</td></tr></table>
-
-
-
-
-
-
 ## There are 3 categories:
 ### analaysers - Analyse string
-- is_pangram
-- is_heterogram
-- is_anagram
-- count_char
+<p id="analysers"></p><table><tr><td><a href="#ispangram">ispangram</a>
+</td><td><a href="#is_heterogram">is_heterogram</a>
+</td><td><a href="#is_anagram">is_anagram</a>
+</td><td><a href="#count_char">count_char</a>
+</td></tr></table>
 
 ### converters - Convert one string value to other string value
-- bricks
+<p id="converters"></p><table><tr><td><a href="#bricks">bricks</a>
+</td></tr></table>
 
 ### generators - Generate text inforamation.
-- generate_nick
-- Generate_password
+<p id="generators"></p><table><tr><td><a href="#generate_nick">generate_nick</a>
+</td><td><a href="#Generate_password">Generate_password</a>
+</td></tr></table>
+
 
 # Installation:
 ``pip install stringtools``
@@ -40,7 +34,7 @@ Useful tool to edit strings in many ways.
 ## analaysers:
 
 #### ```ispangram()```
-##### <a href="#readme-methods">↑</a> Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
+##### <a href="#analysers">↑</a> Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
 
 ```python
 is_pangram('Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.') 
@@ -50,7 +44,7 @@ is_pangram('Hello beautiful world!')
 ```
 
 #### ```is_heterogram()```
-##### <a href="#readme-methods">↑</a> A heterogram is a string in which no letter of the alphabet occurs more than once
+##### <a href="#analysers">↑</a> A heterogram is a string in which no letter of the alphabet occurs more than once
 ```python
 is_heterogram("abcd")
 # -> True
@@ -59,7 +53,7 @@ is_heterogram("abcdd")
 ```
 
 #### ```is_anagram()```
-#### Anagram it's a string that contain all letters from other string 
+#### <a href="#analysers">↑</a> Anagram it's a string that contain all letters from other string 
 ```python
 is_anagram("Tom Marvolo Riddle", "I Am Lord Voldemort")
 # -> True
@@ -68,7 +62,7 @@ is_anagram("God", "Good")
 ```
 
 #### ```count_char()```
-##### Returns dictionary with every character counted e.g
+##### <a href="#analysers">↑</a> Returns dictionary with every character counted e.g
 ```python
 count_char("OOPp")
 # -> {"O": 2, "P": 1, "p": 1}
@@ -80,7 +74,7 @@ count_char("OOPp", lowercase=True)
 ## converters:
 
 #### ```bricks()```
-##### Returns bricked version of string
+##### <a href="#converters">↑</a> Returns bricked version of string
 ```python
 bricks("Hello world!")
 # -> "HeLlO WoRlD!
@@ -91,7 +85,7 @@ bricks("abcdef")
 ## generators:
 
 #### ```generate_nick()```
-##### Generate nicknames by inputed vowels, consonants, and other sounds.
+##### <a href="#generators">↑</a> Generate nicknames by inputed vowels, consonants, and other sounds.
 ```python
 for i in range(20):
 	print(stringtools.generate_nick(length=5))
@@ -121,7 +115,7 @@ for i in range(20):
 
 
 #### ```Generate_password()```
-##### Generate very strong passwords.
+##### <a href="#generators">↑</a> Generate very strong passwords.
 ##### You can choose these options for password:
 - English (abcd...)
 - Numerals (1234...)
