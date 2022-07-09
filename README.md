@@ -7,8 +7,8 @@ Useful tool to edit strings in many ways.
 
 
 
-<p id="readme-methods"></p><table><tr><td><a href="#afterstring-string-static">after</a>
-</td><td><a href="ispangram()">ispangram()</a>
+<p id="readme-methods"></p><table><tr><td><a href="#ispangram">after</a>
+</td><td><a href="#is_heterogram">is_heterogram</a>
 </td></tr></table>
 
 
@@ -50,7 +50,7 @@ is_pangram('Hello beautiful world!')
 ```
 
 #### ```is_heterogram()```
-##### A heterogram is a string in which no letter of the alphabet occurs more than once
+##### <a href="#readme-methods">↑</a> A heterogram is a string in which no letter of the alphabet occurs more than once
 ```python
 is_heterogram("abcd")
 # -> True
