@@ -26,7 +26,7 @@ import random
 import string
 @pytest.mark.parametrize("obj",
 	# Generating random List[str, int]
-	[[random.choice([random.choice(string.printable), random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])]) for i in range(random.randint(50, 100))]])
+	[[random.choice([random.choice(string.printable), random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9])]) for i in range(random.randint(50, 100))]])
 def test_is_palindrome(obj):
 	from stringtools import is_palindrome
 
@@ -47,10 +47,11 @@ def test_is_palindrome(obj):
 	palindrome_tuple = tuple(obj) + reversed_tuple
 	assert is_palindrome(reversed_tuple) == False # Checking Tuple[str, int]
 	assert is_palindrome(palindrome_tuple) == True
+
 	# Checking int
 	random_str_int = "".join([str(element) for element in obj if type(element) == int]) # Generating string containing only digits
 	
 	int_value = int(random_str_int) # Converting string with digits to int
 	assert is_palindrome(int_value) == False
-	palindrome_str = random_str_int + random_str_int [::-1] # Creating palindrome int
-	assert is_palindrome(palindrome_str) == True
+	palindrome_int = int(random_str_int + random_str_int [::-1]) # Creating palindrome int
+	assert is_palindrome(palindrome_int) == True
