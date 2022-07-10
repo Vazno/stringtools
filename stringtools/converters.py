@@ -38,6 +38,9 @@ def replaceall(sentence: str, __old__new: dict[str]) -> str:
 	- replaceall("12345", {"1": "One ", "2": "Two ", "3": "Three "}) -> "OneTwoThree45"
 	- replaceall("Hello world!", {"Hello": "Sup", "world": "earth"}) -> "Sup earth!"
 	'''
+	if not __old__new: # If dictionary is empty returns sentence
+		return sentence
+
 	for old_character, new_character in __old__new.items():
 		sentence = sentence.replace(old_character, new_character)
 	return sentence
