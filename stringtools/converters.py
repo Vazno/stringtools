@@ -34,7 +34,7 @@ def bricks(sentence: str) -> str:
 		new_sentence += sentence[-1].upper()
 	return new_sentence
 
-def replaceall(sentence: str, __old__new: Dict[str]) -> str:
+def replaceall(sentence: str, __old__new: Dict) -> str:
 	'''Replaces text from given sentence and dictionary:
 		dictionary should be formatted like this {old_string: new_string}
 	- replaceall("12345", {"1": "One ", "2": "Two ", "3": "Three "}) -> "OneTwoThree45"
