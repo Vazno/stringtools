@@ -24,7 +24,8 @@ SOFTWARE.
 
 def bricks(sentence: str) -> str:
 	'''Returns bricked version of string
-	- "Hello world!" -> "HeLlO WoRlD!"'''
+	- bricks("Hello world!") -> "HeLlO WoRlD!"
+	- bricks("abcd") -> "AbCd"'''
 	new_sentence = ''.join(x + y for x, y in zip(sentence[0::2].upper(), sentence[1::2].lower()))
 
 	if len(sentence) % 2:

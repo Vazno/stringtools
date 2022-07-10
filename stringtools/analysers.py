@@ -31,9 +31,9 @@ def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
 	'''Checks if inputed string is pangram.
 	(If it has every letter from aplhabet) e.g:
 		
-	- 'Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.' -> True
+	- is_pangram('Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.') -> True
 		
-	- 'Hello beautiful world!' -> False'''
+	- is_pangram('Hello beautiful world!') -> False'''
 	#Checking if created set contains all characters from our alphabet, and returning bool
 	return all(char in set(sentence.lower()) for char in alphabet.lower())
 
@@ -75,8 +75,8 @@ def is_palindrome(obj: Union[List[Union[str, int]], str, int, Tuple[Union[str, i
 def is_tautogram(sentence: str) -> bool:
 	'''Checks if inputed str is tautogram
 	(A tautogram is a text in which all words start with the same letter.)
-	is_tautogram("Crazy cat, cute, cuddly") -> True
-	is_tautogram("Crazy mouse, cute, cuddly") -> False'''
+	- is_tautogram("Crazy cat, cute, cuddly") -> True
+	- is_tautogram("Crazy mouse, cute, cuddly") -> False'''
 	list_sentence = sentence.lower().split(" ")
 	def __first_char(_list: List[str]):
 		for word in _list:
@@ -95,9 +95,8 @@ def is_tautogram(sentence: str) -> bool:
 
 def count_char(sentence: str, lowercase: bool = False) -> dict:
 	'''Returns dictionary with every character counted e.g:
-		"OOPp" -> {"O": 2, "P": 1, "p": 1}
-	lowercase=True, will give:
-		"OOPp" -> {"o": 2, "p": 2}'''
+		- count_char("OOPp") -> {"O": 2, "P": 1, "p": 1}
+		- count_char("OOPp", lowercase=True) -> {"o": 2, "p": 2}'''
 	if sentence != "":
 		if lowercase:
 			return dict(Counter(sentence.lower()))

@@ -21,16 +21,19 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
+
 import random
 import string
 import pytest
+from inspect import signature
+
 @pytest.mark.parametrize("PASSWORD_TEST_SIZE", [random.randint(50, 100)])
 def test_Generate_password(PASSWORD_TEST_SIZE):
 	from stringtools import Generate_password
 	assert str(Generate_password(length=0)) == ""
 
 	# Checking if exclude_similarities work
-	assert str(Generate_password(length=PASSWORD_TEST_SIZE, english=True, symbols=True, exclude_similarities=True)) not in Generate_password.similar_chars
+	assert str(Generate_password(length=PASSWORD_TEST_SIZE, english=True, symbols=True, exclude_similarities=True)) not in signature(Generate_password).parameters['similar_chars'].default
 	
 	# Checking uppercase
 	assert str(Generate_password(length=PASSWORD_TEST_SIZE, uppercase=True, lowercase=False)).isupper()
