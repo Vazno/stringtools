@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
+from typing import Dict
+
 def bricks(sentence: str) -> str:
 	'''Returns bricked version of string
 	- bricks("Hello world!") -> "HeLlO WoRlD!"
@@ -32,7 +34,7 @@ def bricks(sentence: str) -> str:
 		new_sentence += sentence[-1].upper()
 	return new_sentence
 
-def replaceall(sentence: str, __old__new: dict[str]) -> str:
+def replaceall(sentence: str, __old__new: Dict[str]) -> str:
 	'''Replaces text from given sentence and dictionary:
 		dictionary should be formatted like this {old_string: new_string}
 	- replaceall("12345", {"1": "One ", "2": "Two ", "3": "Three "}) -> "OneTwoThree45"
