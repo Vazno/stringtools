@@ -18,6 +18,7 @@ Useful tool to edit strings in many ways.
 
 ### converters - Convert one string value to other string value
 <p id="converters"></p><table><tr><td><a href="#bricks">bricks</a>
+</td><td><a href="#replaceall">replaceall</a>
 </td></tr></table>
 
 ### generators - Generate text inforamation.
@@ -100,6 +101,20 @@ bricks("Hello world!")
 bricks("abcdef")
 # -> "AbCdEf"
 ```
+
+#### ```replaceall()```
+##### <a href="#converters">↑</a> 	'''Replaces text from given sentence and dictionary:
+dictionary should be formatted like this
+```python
+{old_string: new_string}
+```
+```python
+replaceall("12345", {"1": "One ", "2": "Two ", "3": "Three "})
+# -> "OneTwoThree45"
+replaceall("Hello world!", {"Hello": "Sup", "world": "earth"})
+# -> "Sup earth!"
+```
+
 
 ## generators:
 

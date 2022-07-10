@@ -22,22 +22,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
-def bricks(sentence: str) -> str:
-	'''Returns bricked version of string
-	- bricks("Hello world!") -> "HeLlO WoRlD!"
-	- bricks("abcd") -> "AbCd"'''
-	new_sentence = ''.join(x + y for x, y in zip(sentence[0::2].upper(), sentence[1::2].lower()))
+import pytest
+import random
+import string
+from typing import List
+@pytest.mark.parametrize("RANDOM_STRING", ["".join([random.choice(string.ascii_lowercase) for i in range(random.randint(21, 50))])])
 
-	if len(sentence) % 2:
-		new_sentence += sentence[-1].upper()
-	return new_sentence
+# Generating list with random characters
+@pytest.mark.parametrize("RANDOM_CHARS", [list(set([random.choice(string.ascii_lowercase + string.punctuation) for i in range(random.randint(25, 50))]))])
 
-def replaceall(sentence: str, __old__new: dict[str]) -> str:
-	'''Replaces text from given sentence and dictionary:
-		dictionary should be formatted like this {old_string: new_string}
-	- replaceall("12345", {"1": "One ", "2": "Two ", "3": "Three "}) -> "OneTwoThree45"
-	- replaceall("Hello world!", {"Hello": "Sup", "world": "earth"}) -> "Sup earth!"
-	'''
-	for old_character, new_character in __old__new.items():
-		sentence = sentence.replace(old_character, new_character)
-	return sentence
+@pytest.mark.parametrize("RANDOM_INT", [random.randint(10, 20)])
+def test_replaceall(RANDOM_STRING: str, RANDOM_CHARS: List, RANDOM_INT: int):
+	from stringtools import replaceall
+	_dict = dict()
+
+	# Generating dictionary with random characters
+	for i in range(RANDOM_INT-3, 0, -2):
+		_dict[RANDOM_CHARS[i]] = str(RANDOM_CHARS[i+1])
+
+	# Checking if function correctly replaces with dictionary it should not contain any keys from dictionary
+	assert replaceall(RANDOM_STRING, _dict) not in _dict.keys()
+
+	assert set(RANDOM_STRING) == set(replaceall(RANDOM_STRING, dict())) # Checking empty dictionary

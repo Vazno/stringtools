@@ -74,7 +74,6 @@ class Generate_password():
 	If both of them turned off, it will use it's default settings (Uppercase), and it won't change inputed chars.
 	"""
 
-	
 
 	def __init__(self, length: int = 12,
 			english: bool = True, symbols: bool = True,  numerals: bool = True,

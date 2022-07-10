@@ -2,5 +2,5 @@
 # MIT License Copyright (c) 2022 Beksultan Artykbaev
 
 from .analysers import is_pangram, is_heterogram, is_anagram, is_palindrome, is_tautogram, count_char
-from .converters import bricks
+from .converters import bricks, replaceall
 from .generators import generate_nick, Generate_password
