@@ -93,10 +93,10 @@ def is_tautogram(sentence: str) -> bool:
 	return True
 
 
-def count_char(sentence: str, lowercase: bool = False) -> dict:
+def count_chars(sentence: str, lowercase: bool = False) -> dict:
 	'''Returns dictionary with every character counted e.g:
-		- count_char("OOPp") -> {"O": 2, "P": 1, "p": 1}
-		- count_char("OOPp", lowercase=True) -> {"o": 2, "p": 2}'''
+		- count_chars("OOPp") -> {"O": 2, "P": 1, "p": 1}
+		- count_chars("OOPp", lowercase=True) -> {"o": 2, "p": 2}'''
 	if sentence != "":
 		if lowercase:
 			return dict(Counter(sentence.lower()))
@@ -104,3 +104,11 @@ def count_char(sentence: str, lowercase: bool = False) -> dict:
 			return dict(Counter(sentence))
 	else:
 		return dict()
+
+def count_words(sentence: str) -> int:
+	'''Counts every word in sentence and returns an integer.
+	count_words("Hello world!") -> 2
+	count_word("This is me") -> 3'''
+	if sentence:
+		return len(sentence.split(" "))
+	else: return 0 # If sentence is empty returns 0

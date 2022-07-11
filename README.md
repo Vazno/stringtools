@@ -8,16 +8,17 @@ Useful tool to edit strings in many ways.
 
 
 ## There are 3 categories:
-### analaysers - Analyse string
+### analaysers - Analyse string.
 <p id="analysers"></p><table><tr><td><a href="#ispangram">ispangram</a>
 </td><td><a href="#is_heterogram">is_heterogram</a>
 </td><td><a href="#is_anagram">is_anagram</a>
 </td><td><a href="#is_palindrome">is_palindrome</a>
 </td><td><a href="#is_tautogram">is_tautogram</a>
-</td><td><a href="#count_char">count_char</a>
+</td><td><a href="#count_chars">count_chars</a>
+</td><td><a href="#count_words">count_words</a>
 </td></tr></table>
 
-### converters - Convert one string value to other string value
+### converters - Convert one string value to other string value.
 <p id="converters"></p><table><tr><td><a href="#bricks">bricks</a>
 </td><td><a href="#replaceall">replaceall</a>
 </td></tr></table>
@@ -38,8 +39,7 @@ Useful tool to edit strings in many ways.
 ## analaysers:
 
 #### ```ispangram()```
-##### <a href="#analysers">↑</a> Checks if inputed string is pangram (If it has every letter from aplhabet) e.g:
-
+##### <a href="#analysers">↑</a> Checks if inputed string is pangram (A pangram is a sentence using every letter of a given alphabet at least once.)
 ```python
 is_pangram('Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.') 
 # -> True
@@ -48,7 +48,7 @@ is_pangram('Hello beautiful world!')
 ```
 
 #### ```is_heterogram()```
-##### <a href="#analysers">↑</a> A heterogram is a string in which no letter of the alphabet occurs more than once
+##### <a href="#analysers">↑</a> Checks if inputed string is heterogram (A heterogram is a string in which no letter of the alphabet occurs more than once.)
 ```python
 is_heterogram("abcd")
 # -> True
@@ -57,7 +57,7 @@ is_heterogram("abcdd")
 ```
 
 #### ```is_anagram()```
-#### <a href="#analysers">↑</a> Anagram it's a string that contain all letters from other string 
+#### <a href="#analysers">↑</a> Checks if inputed string is an anagram (Anagram is a string that contain all letters from other string.)
 ```python
 is_anagram("Tom Marvolo Riddle", "I Am Lord Voldemort")
 # -> True
@@ -66,15 +66,16 @@ is_anagram("God", "Good")
 ```
 
 #### ```is_palindrome()```
-#### <a href="#analysers">↑</a> A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar.
+#### <a href="#analysers">↑</a> Checks if inputed string is a palindrome (A palindrome is a word, number, phrase, or other sequence of characters which reads the same backward as forward, such as madam or racecar.)
 ```python
 is_palindrome(["r","a","d","a","r"])
 # -> True
 is_palindrome(123)
 # -> False
 ```
+
 #### ```is_tautogram()```
-#### <a href="#analysers">↑</a> A tautogram is a text in which all words start with the same letter.
+#### <a href="#analysers">↑</a> Checks if inputed string is a tautogram (A tautogram is a text in which all words start with the same letter.)
 ```python
 is_tautogram("Crazy cat, cute, cuddly")
 # -> True
@@ -82,20 +83,27 @@ is_tautogram("Crazy mouse, cute, cuddly")
 # -> False
 ```
 
-#### ```count_char()```
-##### <a href="#analysers">↑</a> Returns dictionary with every character counted e.g
+#### ```count_chars()```
+##### <a href="#analysers">↑</a> Returns dictionary with every character counted.
 ```python
-count_char("OOPp")
+count_chars("OOPp")
 # -> {"O": 2, "P": 1, "p": 1}
-count_char("OOPp", lowercase=True)
+count_chars("OOPp", lowercase=True)
 # -> {"o": 2, "p": 2}
+```
+
+#### ```count_words()```
+##### <a href="#analysers">↑</a> Returns an integer with every word counted.
+```python
+count_words("Hello world!") -> 2
+count_word("This is me") -> 3
 ```
 
 
 ## converters:
 
 #### ```bricks()```
-##### <a href="#converters">↑</a> Returns bricked version of string
+##### <a href="#converters">↑</a> Returns bricked version of a string.
 ```python
 bricks("Hello world!")
 # -> "HeLlO WoRlD!
@@ -107,7 +115,7 @@ bricks("abcdef")
 ##### <a href="#converters">↑</a> 	'''Replaces text from given sentence and dictionary:
 dictionary should be formatted like this
 ```python
-{old_string: new_string}
+{"old_string": "new_string"}
 ```
 ```python
 replaceall("12345", {"1": "One ", "2": "Two ", "3": "Three "})
