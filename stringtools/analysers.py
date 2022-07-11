@@ -28,31 +28,27 @@ from typing import Union, Tuple, List
 
 
 def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
-	'''Checks if inputed string is pangram.
-	(If it has every letter from aplhabet) e.g:
-		
+	'''Checks if inputed string is pangram (A pangram is a sentence using every letter of a given alphabet at least once.)
 	- is_pangram('Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.') -> True
-		
 	- is_pangram('Hello beautiful world!') -> False'''
 	#Checking if created set contains all characters from our alphabet, and returning bool
 	return all(char in set(sentence.lower()) for char in alphabet.lower())
 
 def is_heterogram(sentence: str) -> bool:
-	'''Checks if inputed string is heterogram.
-	(A heterogram is a string in which no letter of the alphabet occurs more than once)
+	'''Checks if inputed string is heterogram (A heterogram is a string in which no letter of the alphabet occurs more than once.)
 	- is_heterpgram("abcd") -> True
 	- is_heterogram("abcdd") -> False'''
 	return all(False for key, value in dict(Counter(sentence.lower())).items() if key.isalpha() and value != 1)
 
 def is_anagram(first_word: str, second_word: str) -> bool:
-	'''Checks if given word is anagram of other one.
-	(Anagram it's a string that contain all letters from other string)
+	'''Checks if inputed string is an anagram (Anagram is a string that contain all letters from other string.)
 	- is_anagram("Listen", "Silent") -> True
 	- is_anagram("123", ("1234")) -> False'''
 	return dict(Counter(first_word.replace(" ", "").lower())) == dict(Counter(second_word.replace(" ", "").lower()))
 
 def is_palindrome(obj: Union[List[Union[str, int]], str, int, Tuple[Union[str, int]]]) -> bool:
-	'''Checks if inputed object is palindrome.
+	'''Checks if inputed string is a palindrome (A palindrome is a word, number, phrase,
+	or other sequence of characters which reads the same backward as forward, such as madam or racecar.)
 		Takes Built-in Data Types (list, tuple, str, int)
 	(A palindrome is a word, number, phrase, or other sequence of characters which reads
 	the same backward as forward, such as madam or racecar.)
@@ -73,8 +69,7 @@ def is_palindrome(obj: Union[List[Union[str, int]], str, int, Tuple[Union[str, i
 		return str(obj) == str(obj)[::-1]
 
 def is_tautogram(sentence: str) -> bool:
-	'''Checks if inputed str is tautogram
-	(A tautogram is a text in which all words start with the same letter.)
+	'''Checks if inputed string is a tautogram (A tautogram is a text in which all words start with the same letter.)
 	- is_tautogram("Crazy cat, cute, cuddly") -> True
 	- is_tautogram("Crazy mouse, cute, cuddly") -> False'''
 	list_sentence = sentence.lower().split(" ")
@@ -94,7 +89,7 @@ def is_tautogram(sentence: str) -> bool:
 
 
 def count_chars(sentence: str, lowercase: bool = False) -> dict:
-	'''Returns dictionary with every character counted e.g:
+	'''Returns dictionary with every character counted.
 		- count_chars("OOPp") -> {"O": 2, "P": 1, "p": 1}
 		- count_chars("OOPp", lowercase=True) -> {"o": 2, "p": 2}'''
 	if sentence != "":
@@ -106,9 +101,9 @@ def count_chars(sentence: str, lowercase: bool = False) -> dict:
 		return dict()
 
 def count_words(sentence: str) -> int:
-	'''Counts every word in sentence and returns an integer.
+	'''Returns an integer with every word counted.
 	count_words("Hello world!") -> 2
 	count_word("This is me") -> 3'''
 	if sentence:
-		return len(sentence.split(" "))
+		return len(sentence.split())
 	else: return 0 # If sentence is empty returns 0
