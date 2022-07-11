@@ -37,7 +37,7 @@ def bricks(sentence: str) -> str:
 def replaceall(sentence: str, __old__new: Dict) -> str:
 	'''Replaces text from given sentence and dictionary:
 		dictionary should be formatted like this {old_string: new_string}
-	- replaceall("12345", {"1": "One ", "2": "Two ", "3": "Three "}) -> "OneTwoThree45"
+	- replaceall("12345", {"1": "One ", "2": "Two ", "3": "Three "}) -> "One Two Three 45"
 	- replaceall("Hello world!", {"Hello": "Sup", "world": "earth"}) -> "Sup earth!"
 	'''
 	if __old__new == dict(): # If dictionary is empty returns sentence

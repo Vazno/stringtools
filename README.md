@@ -1,6 +1,7 @@
 # 📝 stringtools
 
 [![Run tests](https://github.com/Vazno/stringtools/actions/workflows/pytester.yml/badge.svg?)](https://github.com/Vazno/stringtools/actions/workflows/pytester.yml)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Vazno/stringtools.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Vazno/stringtools/context:python)
 
 Useful tool to edit strings in many ways.
 #### It has tons of functions, and classes especially built to be fast and stable ⚡.
@@ -110,7 +111,7 @@ dictionary should be formatted like this
 ```
 ```python
 replaceall("12345", {"1": "One ", "2": "Two ", "3": "Three "})
-# -> "OneTwoThree45"
+# -> "One Two Three 45"
 replaceall("Hello world!", {"Hello": "Sup", "world": "earth"})
 # -> "Sup earth!"
 ```
