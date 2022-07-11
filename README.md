@@ -7,7 +7,7 @@ Useful tool to edit strings in many ways.
 #### It has tons of functions, and classes especially built to be fast and stable ⚡.
 
 
-## There are 3 categories:
+## There are 4 categories:
 ### analaysers - Analyse string.
 <p id="analysers"></p><table><tr><td><a href="#ispangram">ispangram</a>
 </td><td><a href="#is_heterogram">is_heterogram</a>
@@ -26,6 +26,14 @@ Useful tool to edit strings in many ways.
 ### generators - Generate text inforamation.
 <p id="generators"></p><table><tr><td><a href="#generate_nick">generate_nick</a>
 </td><td><a href="#Generate_password">Generate_password</a>
+</td></tr></table>
+
+### validators - Validate ip, email addresses, e.t.c
+<p id="validators"></p><table><tr><td><a href="#validate_semver">validate_semver</a>
+</td><td><a href="#validate_email">validate_email</a>
+</td><td><a href="#validate_ipv4">validate_ipv4</a>
+</td><td><a href="#validate_ipv6">validate_ipv6</a>
+</td><td><a href="#validate_url">validate_url</a>
 </td></tr></table>
 
 
@@ -95,8 +103,10 @@ count_chars("OOPp", lowercase=True)
 #### ```count_words()```
 ##### <a href="#analysers">↑</a> Returns an integer with every word counted.
 ```python
-count_words("Hello world!") -> 2
-count_word("This is me") -> 3
+count_words("Hello world!")
+# -> 2
+count_words("This is me")
+# -> 3
 ```
 
 
@@ -170,6 +180,54 @@ Generate_password(length=50, english=True, symbols=True, numerals=True, exclude_
 # -> "C-3?r#$a#[7n>!5\7<8s,(4W)2324C44(-3[4,!%$-!1k1+(Mg"
 Generate_password(length=50, english=False, symbols=True, numerals=True)
 # -> "_;53.?30,>92:;=.+$}>[>'6;8$1~_'>8$=504-`751]>434_&"
+```
+
+
+## validators:
+
+#### ```validate_semver()```
+##### <a href="#validators">↑</a> Validate if version name follows semantic versioning. For more information go to: https://semver.org/
+```python
+validate_semver("1.0.0")
+# -> True
+validate_semver("1.0.0.0")
+# -> False
+```
+
+#### ```validate_email()```
+##### <a href="#validators">↑</a> Validate an email address.
+```python
+validate_email("email@example.com")
+# -> True
+validate_email("email@example..com")
+# -> False
+```
+
+#### ```validate_ipv4()```
+##### <a href="#validators">↑</a> Validate an ipv4 address.
+```python
+validate_ipv4("127.255.255.254")
+# -> True
+validate_ipv4("127.255.254")
+# -> False
+```
+
+#### ```validate_ipv6()```
+##### <a href="#validators">↑</a> Validate an ipv6 address.
+```python
+validate_ipv6("2345:0425:2CA1:0000:0000:0567:5673:23b5")
+# -> True
+validate_ipv6("0425:2CA1:0000:0000:0567:5673:23b5")
+# -> False
+```
+
+#### ```validate_url()```
+##### <a href="#validators">↑</a> Validate an url.
+```python
+validate_url("https://example.com/")
+# -> True
+validate_url("example.com")
+# -> False
 ```
 
 

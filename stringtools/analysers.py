@@ -103,7 +103,7 @@ def count_chars(sentence: str, lowercase: bool = False) -> dict:
 def count_words(sentence: str) -> int:
 	'''Returns an integer with every word counted.
 	count_words("Hello world!") -> 2
-	count_word("This is me") -> 3'''
+	count_words("This is me") -> 3'''
 	if sentence:
 		return len(sentence.split())
 	else: return 0 # If sentence is empty returns 0
