@@ -39,7 +39,6 @@ def validate_email(email: str) -> bool:
 	- validate_email("email@example..com") -> False'''
 	# http://emailregex.com/
 	return bool(re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", email))
-
 def validate_ipv4(ip: str) -> bool:
 	'''Validate an ipv4 address.
 	- validate_ipv4("127.255.255.254") -> True
