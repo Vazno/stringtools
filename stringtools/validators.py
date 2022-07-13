@@ -80,6 +80,3 @@ class Validator():
 			return True
 		except socket.error:
 			return False
-
-
-print(Validator.validate_semver("1.0.0"))
