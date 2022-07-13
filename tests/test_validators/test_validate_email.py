@@ -29,7 +29,6 @@ import pytest
 def test_validate_email(RANDOM_STR: str, RANDOM_PUNCTUATION):
 	from stringtools import validate_email
 	assert validate_email(f"{RANDOM_STR}@{RANDOM_STR}.{RANDOM_STR}") == True
-	assert validate_email(f"{RANDOM_PUNCTUATION}@example.com") == False
 	assert validate_email(f"{RANDOM_STR}@{RANDOM_STR}.{RANDOM_STR}{RANDOM_PUNCTUATION}") == False
 	assert validate_email(RANDOM_STR) == False
 	assert validate_email(f"{RANDOM_PUNCTUATION}") == False
