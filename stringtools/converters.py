@@ -22,17 +22,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
+import re
 from typing import Dict
 
-def bricks(sentence: str) -> str:
+def bricks(sentence: str, _reverse: bool = False) -> str:
 	'''Returns bricked version of string
 	- bricks("Hello world!") -> "HeLlO WoRlD!"
-	- bricks("abcd") -> "AbCd"'''
-	new_sentence = ''.join(x + y for x, y in zip(sentence[0::2].upper(), sentence[1::2].lower()))
+	- bricks("Hello world!", _reverse=True) -> "hElLo wOrLd!"'''
+	if _reverse:
+		new_sentence = ''.join(x + y for x, y in zip(sentence[0::2].lower(), sentence[1::2].upper()))
+		if len(sentence) % 2:
+			new_sentence += sentence[-1].lower()
+		return new_sentence
+	else:
+		new_sentence = ''.join(x + y for x, y in zip(sentence[0::2].upper(), sentence[1::2].lower()))
 
-	if len(sentence) % 2:
-		new_sentence += sentence[-1].upper()
-	return new_sentence
+		if len(sentence) % 2:
+			new_sentence += sentence[-1].upper()
+		return new_sentence
 
 def replaceall(sentence: str, __old__new: Dict) -> str:
 	'''Replaces text from given sentence and dictionary:
@@ -46,3 +53,25 @@ def replaceall(sentence: str, __old__new: Dict) -> str:
 	for old_character, new_character in __old__new.items():
 		sentence = sentence.replace(old_character, new_character)
 	return sentence
+
+def numerate_text(text: str) -> str:
+	'''Numerate each line of text.
+	- numerate_text("Hello world\\nHow are you doing?") -> "1 Hello World\\n2 How are you doing?"
+	- numerate_text("First line.\\nThe second line\\nThe third line") -> "1 First line.\\n2 The second line\\n3 The third line"'''
+	numerated_lines = []
+	lines = text.split("\n")
+	for line_num in range(len(lines)):
+		numerated_lines.append(f"{line_num+1} {lines[line_num]}")
+	return "\n".join(numerated_lines)
+
+def remove_trailing_whitespaces(sentence: str) -> str:
+	'''Remove all trailing whitespaces from sentence.
+	- remove_trailing_whitespaces("text   ") -> "text"
+	- remove_trailing_whitespaces("Look at this. ") -> "Look at this."'''
+	return re.sub(r"(?<=\S)\s+$", '', sentence)
+
+def remove_leading_whitespaces(sentence: str) -> str:
+	'''Remove all leading whitespaces from sentence.
+	- remove_leading_whitespaces("   text") -> "text"
+	- remove_leading_whitespaces(" Look at this.") -> "Look at this."'''
+	return re.sub(r"^\s+", '', sentence)

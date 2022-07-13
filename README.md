@@ -21,6 +21,9 @@ Useful tool to edit strings in many ways.
 ### converters - Convert one string value to other string value.
 <p id="converters"></p><table><tr><td><a href="#bricks">bricks</a>
 </td><td><a href="#replaceall">replaceall</a>
+</td><td><a href="#numerate_text">numerate_text</a>
+</td><td><a href="#remove_trailing_whitespaces">remove_trailing_whitespaces</a>
+</td><td><a href="#remove_leading_whitespaces">remove_leading_whitespaces</a>
 </td></tr></table>
 
 ### generators - Generate text inforamation.
@@ -122,8 +125,8 @@ bricks("abcdef")
 ```
 
 #### ```replaceall()```
-##### <a href="#converters">↑</a> 	'''Replaces text from given sentence and dictionary:
-dictionary should be formatted like this
+##### <a href="#converters">↑</a> Replaces text from given sentence and dictionary.
+dictionary should be formatted like this:
 ```python
 {"old_string": "new_string"}
 ```
@@ -134,7 +137,34 @@ replaceall("Hello world!", {"Hello": "Sup", "world": "earth"})
 # -> "Sup earth!"
 ```
 
+#### ```numerate_text()```
+##### <a href="#converters">↑</a> Numerate each line of text.
+```python
+numerate_text("Hello world\nHow are you doing?")
+# -> "1 Hello World\\n2 How are you doing?"
+numerate_text("First line.\nThe second line\nThe third line")
+# -> "1 First line.\n2 The second line\n3 The third line"
+```
 
+#### ```remove_trailing_whitespaces()```
+##### <a href="#converters">↑</a> Remove all trailing whitespaces from sentence.
+dictionary should be formatted like this
+```python
+remove_trailing_whitespaces("text   ")
+# -> "text"
+remove_trailing_whitespaces("Look at this. ")
+# -> "Look at this."'''
+```
+
+#### ```remove_leading_whitespaces()```
+##### <a href="#converters">↑</a> Remove all leading whitespaces from sentence.
+dictionary should be formatted like this
+```python
+remove_leading_whitespaces("   text")
+# -> "text"
+remove_leading_whitespaces(" Look at this.")
+# -> "Look at this."'''
+```
 ## generators:
 
 #### ```generate_nick()```
@@ -164,8 +194,6 @@ for i in range(20):
 # Eceuy
 # Elere
 ```
-
-
 
 #### ```Generate_password()```
 ##### <a href="#generators">↑</a> Generate very strong passwords.
@@ -222,7 +250,7 @@ validate_ipv6("0425:2CA1:0000:0000:0567:5673:23b5")
 ```
 
 #### ```validate_url()```
-##### <a href="#validators">↑</a> Validate an url.
+##### <a href="#validators">↑</a> Validate url address.
 ```python
 validate_url("https://example.com/")
 # -> True

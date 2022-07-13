@@ -45,3 +45,12 @@ def test_bricks(TEST_SIZE):
 		else:
 			bricked_string += char[1].lower()
 	assert bricked_string == bricks(_string)
+
+	# Checking _reverse=True
+	bricked_string = ""
+	for char in enumerate(_string):
+		if char[0] % 2 == 0:
+			bricked_string += char[1].lower()
+		else:
+			bricked_string += char[1].upper()
+	assert bricked_string == bricks(_string, _reverse=True)

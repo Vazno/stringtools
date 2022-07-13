@@ -24,7 +24,7 @@ SOFTWARE.
 
 import string
 from collections import Counter
-from typing import Union, Tuple, List
+from typing import Dict, Union, Tuple, List
 
 
 def is_pangram(sentence: str, alphabet: str = string.ascii_lowercase) -> bool:
@@ -88,7 +88,7 @@ def is_tautogram(sentence: str) -> bool:
 	return True
 
 
-def count_chars(sentence: str, lowercase: bool = False) -> dict:
+def count_chars(sentence: str, lowercase: bool = False) -> Dict:
 	'''Returns dictionary with every character counted.
 		- count_chars("OOPp") -> {"O": 2, "P": 1, "p": 1}
 		- count_chars("OOPp", lowercase=True) -> {"o": 2, "p": 2}'''

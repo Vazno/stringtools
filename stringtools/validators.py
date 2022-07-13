@@ -61,7 +61,7 @@ def validate_ipv6(ip: str) -> bool:
 		return False
 
 def validate_url(url: str) -> bool:
-	'''Validate an url.
+	'''Validate url address.
 	- validate_url("https://example.com/") -> True
 	- validate_url("example.com") -> False'''
 	# https://urlregex.com/
