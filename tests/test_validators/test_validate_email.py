@@ -25,8 +25,8 @@ import pytest
 @pytest.mark.parametrize("RANDOM_STR", ["".join([random.choice(string.ascii_letters) for i in range(random.randint(1, 100))])])
 @pytest.mark.parametrize("RANDOM_PUNCTUATION", [random.choice(string.punctuation)])
 def test_validate_email(RANDOM_STR: str, RANDOM_PUNCTUATION):
-	from stringtools import validate_email
-	assert validate_email(f"{RANDOM_STR}@{RANDOM_STR}.{RANDOM_STR}") == True
-	assert validate_email(f"{RANDOM_STR}@@{RANDOM_STR}.{RANDOM_STR}") == False
-	assert validate_email(RANDOM_STR) == False
-	assert validate_email(f"{RANDOM_PUNCTUATION}") == False
+	from stringtools import Validator
+	assert Validator.validate_email(f"{RANDOM_STR}@{RANDOM_STR}.{RANDOM_STR}") == True
+	assert Validator.validate_email(f"{RANDOM_STR}@@{RANDOM_STR}.{RANDOM_STR}") == False
+	assert Validator.validate_email(RANDOM_STR) == False
+	assert Validator.validate_email(f"{RANDOM_PUNCTUATION}") == False

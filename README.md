@@ -32,11 +32,11 @@ Useful tool to edit strings in many ways.
 </td></tr></table>
 
 ### validators - Validate ip, email addresses, e.t.c
-<p id="validators"></p><table><tr><td><a href="#validate_semver">validate_semver</a>
-</td><td><a href="#validate_email">validate_email</a>
-</td><td><a href="#validate_ipv4">validate_ipv4</a>
-</td><td><a href="#validate_ipv6">validate_ipv6</a>
-</td><td><a href="#validate_url">validate_url</a>
+<p id="validators"></p><table><tr><td><a href="#Validatorvalidate_semver">validate_semver</a>
+</td><td><a href="#Validatorvalidate_email">validate_email</a>
+</td><td><a href="#Validatorvalidate_ipv4">validate_ipv4</a>
+</td><td><a href="#Validatorvalidate_ipv6">validate_ipv6</a>
+</td><td><a href="#Validatorvalidate_url">validate_url</a>
 </td></tr></table>
 
 
@@ -213,48 +213,47 @@ Generate_password(length=50, english=False, symbols=True, numerals=True)
 
 ## validators:
 
-#### ```validate_semver()```
+#### ```Validator.validate_semver()```
 ##### <a href="#validators">↑</a> Validate if version name follows semantic versioning. For more information go to: https://semver.org/
 ```python
-validate_semver("1.0.0")
+Validator.validate_semver("1.0.0")
 # -> True
-validate_semver("1.0.0.0")
+Validator.validate_semver("1.0.0.0")
 # -> False
 ```
 
-#### ```validate_email()```
+#### ```Validator.validate_email()```
 ##### <a href="#validators">↑</a> Validate an email address.
 ```python
-validate_email("email@example.com")
+Validator.validate_email("email@example.com")
 # -> True
-validate_email("email@example..com")
+Validator.validate_email("email@example..com")
 # -> False
 ```
-
-#### ```validate_ipv4()```
-##### <a href="#validators">↑</a> Validate an ipv4 address.
-```python
-validate_ipv4("127.255.255.254")
-# -> True
-validate_ipv4("127.255.254")
-# -> False
-```
-
-#### ```validate_ipv6()```
-##### <a href="#validators">↑</a> Validate an ipv6 address.
-```python
-validate_ipv6("2345:0425:2CA1:0000:0000:0567:5673:23b5")
-# -> True
-validate_ipv6("0425:2CA1:0000:0000:0567:5673:23b5")
-# -> False
-```
-
-#### ```validate_url()```
+#### ```Validator.validate_url()```
 ##### <a href="#validators">↑</a> Validate url address.
 ```python
-validate_url("https://example.com/")
+Validator.validate_url("https://example.com/")
 # -> True
-validate_url("example.com")
+Validator.validate_url("example.com")
+# -> False
+```
+
+#### ```Validator.validate_ipv4()```
+##### <a href="#validators">↑</a> Validate an ipv4 address.
+```python
+Validator.validate_ipv4("127.255.255.254")
+# -> True
+Validator.validate_ipv4("127.255.254")
+# -> False
+```
+
+#### ```Validator.validate_ipv6()```
+##### <a href="#validators">↑</a> Validate an ipv6 address.
+```python
+Validator.validate_ipv6("2345:0425:2CA1:0000:0000:0567:5673:23b5")
+# -> True
+Validator.validate_ipv6("0425:2CA1:0000:0000:0567:5673:23b5")
 # -> False
 ```
 

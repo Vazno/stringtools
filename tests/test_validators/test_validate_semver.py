@@ -26,7 +26,7 @@ import pytest
 @pytest.mark.parametrize("RANDOM_INT_2", [str(random.randint(1, 999999))])
 @pytest.mark.parametrize("RANDOM_INT_3", [str(random.randint(1, 999999))])
 def test_validate_semver(RANDOM_INT_1, RANDOM_INT_2, RANDOM_INT_3):
-	from stringtools import validate_semver
+	from stringtools import Validator
 	random_version = f"{RANDOM_INT_1}.{RANDOM_INT_2}.{RANDOM_INT_3}"
 
 	valid_semver = f'''
@@ -104,6 +104,6 @@ def test_validate_semver(RANDOM_INT_1, RANDOM_INT_2, RANDOM_INT_3):
 	{random_version}----RC-SNAPSHOT.12.09.1--------------------------------..12'''
 	
 	for version_name in valid_semver.split():
-		assert validate_semver(version_name) == True
+		assert Validator.validate_semver(version_name) == True
 	for version_name in invalid_semver.split():
-		assert validate_semver(version_name) == False
+		assert Validator.validate_semver(version_name) == False
