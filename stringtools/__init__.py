@@ -1,4 +1,4 @@
-'''String analaysing, converting, validating, generating tools.'''
+'''This module provides string operations, such as analaysing, converting, generating, validating.'''
 # MIT License Copyright (c) 2022 Beksultan Artykbaev
 
 from .analysers import is_pangram, is_heterogram, is_anagram, is_palindrome, is_tautogram, count_chars, count_words

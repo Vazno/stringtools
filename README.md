@@ -3,7 +3,7 @@
 [![Run tests](https://github.com/Vazno/stringtools/actions/workflows/pytester.yml/badge.svg?)](https://github.com/Vazno/stringtools/actions/workflows/pytester.yml)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Vazno/stringtools.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Vazno/stringtools/context:python)
 
-Useful tool to edit strings in many ways.
+This module provides string operations, such as analaysing, converting, generating, validating.
 #### It has tons of functions, and classes especially built to be fast and stable ⚡.
 
 

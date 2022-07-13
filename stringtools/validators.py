@@ -29,8 +29,14 @@ class Validator():
 		pass
 
 	@staticmethod
-	def is_re_pattern_in_text(re_pattern, text) -> bool:
+	def is_re_pattern_in_text(re_pattern: str, text: str) -> bool:
+		'''Checks if regex pattern is in text, returns bool'''
 		return bool(re.match(re_pattern, text))
+
+	@staticmethod
+	def delete_re_pattern(re_pattern:str, text:str) -> str:
+		'''Deletes all found regex pattern from string.'''
+		return re.sub(re_pattern, "", text)
 
 	@classmethod
 	def validate_semver(cls, version: str) -> bool:
@@ -40,7 +46,6 @@ class Validator():
 		
 		For more information go to: https://semver.org/'''
 		# https://regex101.com/r/Ly7O1x/3
-		
 		return cls.is_re_pattern_in_text(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$", version)
 
 	@classmethod
