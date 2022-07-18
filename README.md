@@ -28,7 +28,7 @@ This module provides string operations, such as analaysing, converting, generati
 
 ### generators - Generate text inforamation.
 <p id="generators"></p><table><tr><td><a href="#generate_nick">generate_nick</a>
-</td><td><a href="#Generate_password">Generate_password</a>
+</td><td><a href="#GeneratePassword">GeneratePassword</a>
 </td></tr></table>
 
 ### validators - Validate ip, email addresses, e.t.c
@@ -195,7 +195,7 @@ for i in range(20):
 # Elere
 ```
 
-#### ```Generate_password()```
+#### ```GeneratePassword()```
 ##### <a href="#generators">↑</a> Generate very strong passwords.
 ##### You can choose these options for password:
 - English (abcd...)
@@ -204,9 +204,9 @@ for i in range(20):
 - Own symbols (Any)
 - Exclude similar characters (1, l, L, 0, o, O, etc.)
 ```python
-Generate_password(length=50, english=True, symbols=True, numerals=True, exclude_similarities=True)
+GeneratePassword(length=50, english=True, symbols=True, numerals=True, exclude_similarities=True)
 # -> "C-3?r#$a#[7n>!5\7<8s,(4W)2324C44(-3[4,!%$-!1k1+(Mg"
-Generate_password(length=50, english=False, symbols=True, numerals=True)
+GeneratePassword(length=50, english=False, symbols=True, numerals=True)
 # -> "_;53.?30,>92:;=.+$}>[>'6;8$1~_'>8$=504-`751]>434_&"
 ```
 

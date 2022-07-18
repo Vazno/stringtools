@@ -26,24 +26,24 @@ import pytest
 from inspect import signature
 
 @pytest.mark.parametrize("PASSWORD_TEST_SIZE", [random.randint(50, 100)])
-def test_Generate_password(PASSWORD_TEST_SIZE):
-	from stringtools import Generate_password
-	assert str(Generate_password(length=0)) == ""
+def test_GeneratePassword(PASSWORD_TEST_SIZE):
+	from stringtools import GeneratePassword
+	assert str(GeneratePassword(length=0)) == ""
 
 	# Checking if exclude_similarities work
-	assert str(Generate_password(length=PASSWORD_TEST_SIZE, english=True, symbols=True, exclude_similarities=True)) not in signature(Generate_password).parameters['similar_chars'].default
+	assert str(GeneratePassword(length=PASSWORD_TEST_SIZE, english=True, symbols=True, exclude_similarities=True)) not in signature(GeneratePassword).parameters['similar_chars'].default
 	
 	# Checking uppercase
-	assert str(Generate_password(length=PASSWORD_TEST_SIZE, uppercase=True, lowercase=False)).isupper()
+	assert str(GeneratePassword(length=PASSWORD_TEST_SIZE, uppercase=True, lowercase=False)).isupper()
 
 	# Checking lowercase
-	assert str(Generate_password(length=PASSWORD_TEST_SIZE, lowercase=True, uppercase=False)).islower()
+	assert str(GeneratePassword(length=PASSWORD_TEST_SIZE, lowercase=True, uppercase=False)).islower()
 
 
 # Testing own_symbols setting
 @pytest.mark.parametrize("PASSWORD_TEST_SIZE", [random.randint(50, 100)])
-def test_Generate_password_own_symbols(PASSWORD_TEST_SIZE):
-	from stringtools import Generate_password
+def test_GeneratePassword_own_symbols(PASSWORD_TEST_SIZE):
+	from stringtools import GeneratePassword
 	# Storing own symbols
 	random_own = []
 
@@ -51,4 +51,4 @@ def test_Generate_password_own_symbols(PASSWORD_TEST_SIZE):
 	for i in range(2):
 		random_own.append(random.choice(string.ascii_lowercase))
 
-	assert set(str(Generate_password(length=PASSWORD_TEST_SIZE, english=False, symbols=False, numerals=False, own_symbols=random_own)).lower()) == set(random_own)
+	assert set(str(GeneratePassword(length=PASSWORD_TEST_SIZE, english=False, symbols=False, numerals=False, own_symbols=random_own)).lower()) == set(random_own)
