@@ -44,7 +44,7 @@ The key features are:
 </td><td><a href="#is_heterogram">is_heterogram</a>
 </td><td><a href="#is_anagram">is_anagram</a>
 </td><td><a href="#is_palindrome">is_palindrome</a>
-</td><td><a href="#is_tautogram">is_tautogram</a>
+</td></tr><tr><td><a href="#is_tautogram">is_tautogram</a>
 </td><td><a href="#is_binary">is_binary</a>
 </td><td><a href="#count_chars">count_chars</a>
 </td><td><a href="#count_words">count_words</a>
@@ -55,7 +55,7 @@ The key features are:
 </td><td><a href="#replaceall">replaceall</a>
 </td><td><a href="#numerate_text">numerate_text</a>
 </td><td><a href="#remove_trailing_whitespaces">remove_trailing_whitespaces</a>
-</td><td><a href="#remove_leading_whitespaces">remove_leading_whitespaces</a>
+</td></tr><tr><td><a href="#remove_leading_whitespaces">remove_leading_whitespaces</a>
 </td></tr></table>
 
 ### generators - Generate text inforamation.
@@ -68,7 +68,7 @@ The key features are:
 </td><td><a href="#Validatorvalidate_email">validate_email</a>
 </td><td><a href="#Validatorvalidate_ipv4">validate_ipv4</a>
 </td><td><a href="#Validatorvalidate_ipv6">validate_ipv6</a>
-</td><td><a href="#Validatorvalidate_url">validate_url</a>
+</td></tr><tr><td><a href="#validate_url">validate_url</a>
 </td></tr></table>
 
 
