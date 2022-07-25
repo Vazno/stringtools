@@ -1,5 +1,5 @@
 
-![Logo](readme-images/stringtools.svg)
+![Logo](https://raw.githubusercontent.com/Vazno/stringtools/main/readme-images/stringtools.svg)
 <p align="center">
     <em>stringtools provides string operations, such as analaysing, converting, generating, validating.</em>
 </p>
