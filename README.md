@@ -45,6 +45,7 @@ The key features are:
 </td><td><a href="#is_anagram">is_anagram</a>
 </td><td><a href="#is_palindrome">is_palindrome</a>
 </td><td><a href="#is_tautogram">is_tautogram</a>
+</td><td><a href="#is_binary">is_binary</a>
 </td><td><a href="#count_chars">count_chars</a>
 </td><td><a href="#count_words">count_words</a>
 </td></tr></table>
@@ -118,6 +119,15 @@ is_palindrome(123)
 is_tautogram("Crazy cat, cute, cuddly")
 # -> True
 is_tautogram("Crazy mouse, cute, cuddly")
+# -> False
+```
+
+#### ```is_binary()```
+#### <a href="#analysers">↑</a> Checks if given string or int is a binary number (A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: 0 and 1)
+```python
+is_binary(100101010101)
+# -> True
+is_binary("1010010101012")
 # -> False
 ```
 

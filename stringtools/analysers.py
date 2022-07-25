@@ -85,6 +85,13 @@ def is_tautogram(sentence: str) -> bool:
 				break
 	return True
 
+def is_binary(obj: Union[str, int]) -> bool:
+	'''Checks if given string or int is binary number
+	(A binary number is a number expressed in the base-2 numeral system or binary numeral system,
+	a method of mathematical expression which uses only two symbols: 0 and 1)
+	- is_binary(100101010101) -> True
+	- is_binary("1010010101012") -> False'''
+	return all(True if num == "0" or num == "1" else False for num in str(obj))
 
 def count_chars(sentence: str, lowercase: bool = False) -> Dict:
 	'''Returns dictionary with every character counted.
