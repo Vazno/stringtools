@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1920px"
-   height="1080px"
-   viewBox="0 0 1920 1080"
+   width="1118.9178"
+   height="320.97574"
+   viewBox="0 0 1118.9178 320.97574"
    version="1.1"
    id="SVGRoot"
    sodipodi:docname="stringtools.svg"
@@ -24,8 +24,8 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="0.52221046"
-     inkscape:cx="1075.237"
-     inkscape:cy="432.7757"
+     inkscape:cx="678.84508"
+     inkscape:cy="65.107849"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
@@ -35,16 +35,17 @@
   <defs
      id="defs824">
     <rect
-       x="270.81295"
+       x="270.81296"
        y="100.20079"
        width="1512.1036"
-       height="543.61726"
+       height="543.61725"
        id="rect2918" />
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-396.89748,-367.62702)">
     <text
        xml:space="preserve"
        id="text2916"
@@ -52,8 +53,8 @@
        transform="matrix(0.87717948,0,0,0.87717948,153.09298,193.14122)"><tspan
          x="270.8125"
          y="464.15125"
-         id="tspan57436"><tspan
+         id="tspan1364"><tspan
            style="font-family:Gabriola;-inkscape-font-specification:Gabriola"
-           id="tspan57434">stringtools</tspan></tspan></text>
+           id="tspan1362">stringtools</tspan></tspan></text>
   </g>
 </svg>
