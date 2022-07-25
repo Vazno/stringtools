@@ -1,11 +1,42 @@
-# 📝 stringtools
+
 ![Logo](readme-images/stringtools.svg)
-[![Run tests](https://github.com/Vazno/stringtools/actions/workflows/pytester.yml/badge.svg?)](https://github.com/Vazno/stringtools/actions/workflows/pytester.yml)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/Vazno/stringtools.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/Vazno/stringtools/context:python)
+<p align="center">
+    <em>stringtools provides string operations, such as analaysing, converting, generating, validating.</em>
+</p>
 
-This module provides string operations, such as analaysing, converting, generating, validating.
-#### It has tons of functions, and classes especially built to be fast and stable ⚡.
+<p align="center">
+<a href="https://github.com/Vazno/stringtools/actions/workflows/pytester.yml" target="_blank">
+    <img src="https://github.com/Vazno/stringtools/actions/workflows/pytester.yml/badge.svg?" alt="Tests">
+</a>
 
+<a href="https://lgtm.com/projects/g/Vazno/stringtools/context:python" target="_blank">
+    <img src="https://img.shields.io/lgtm/grade/python/g/Vazno/stringtools.svg?logo=lgtm&logoWidth=18" alt="Tests">
+</a>
+
+<a href="https://pypi.org/project/stringtools" target="_blank">
+    <img src="https://img.shields.io/pypi/pyversions/stringtools.svg?color=%2334D058" alt="Supported Python versions">
+</a>
+
+---
+
+**Source Code**: <a href="https://github.com/Vazno/stringtools" target="_blank">https://github.com/Vazno/stringtools</a>
+
+**PyPI**: <a href="https://pypi.org/project/stringtools/" target="_blank">https://pypi.org/project/stringtools/</a>
+
+---
+stringtools has a lot of solutions specially built to be fast and stable ⚡.
+
+The key features are:
+
+* **Easy to use**: It's has a very friendly and well-commented code.
+* **Open source**: stringtools is completely free and [open source](https://opensource.org/about)
+* **Stability**: Most of the code is covered with tests, so there is a less chance to catch a bug.
+
+
+# Installation:
+``pip install stringtools``
+
+# User’s Guide:
 
 ## There are 4 categories:
 ### analaysers - Analyse string.
@@ -38,10 +69,6 @@ This module provides string operations, such as analaysing, converting, generati
 </td><td><a href="#Validatorvalidate_ipv6">validate_ipv6</a>
 </td><td><a href="#Validatorvalidate_url">validate_url</a>
 </td></tr></table>
-
-
-# Installation:
-``pip install stringtools``
 
 
 # Usage/Examples
@@ -258,7 +285,7 @@ Validator.validate_ipv6("0425:2CA1:0000:0000:0567:5673:23b5")
 ```
 
 
-## Authors
+# Authors
 
 - [@Vazno](https://www.github.com/Vazno)
 
