@@ -48,6 +48,11 @@ The key features are:
 </td><td><a href="#is_binary">is_binary</a>
 </td><td><a href="#count_chars">count_chars</a>
 </td><td><a href="#count_words">count_words</a>
+</td></tr><tr><td><a href="#Levenshteinclassic_levenshtein">classic_levenshtein</a>
+</td><td><a href="#Levenshteindamerau_levenshtein">damerau_levenshtein</a>
+</td><td><a href="#Levenshteinrecursive_levenshtein">recursive_levenshtein</a>
+</td><td><a href="#Levenshteinwf_levenshtein">wf_levenshtein</a>
+</td></tr><tr><td><a href="#Levenshteinwfi_levenshtein">wfi_levenshtein</a>
 </td></tr></table>
 
 ### converters - Convert one string value to other string value.
@@ -149,6 +154,60 @@ count_words("This is me")
 # -> 3
 ```
 
+#### ```Levenshtein.classic_levenshtein()```
+##### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings. This version is easier to read, but significantly slower than the version below (up to several orders of magnitude). Useful for learning, less so otherwise.
+```python
+Levenshtein.classic_levenshtein('kitten', 'sitting')
+# -> 3
+Levenshtein.classic_levenshtein('kitten', 'kitten')
+# -> 0
+Levenshtein.classic_levenshtein('', '')
+# -> 0
+```
+
+#### ```Levenshtein.damerau_levenshtein()```
+##### <a href="#analysers">↑</a> Calculates the Damerau-Levenshtein distance between two strings. In addition to insertions, deletions and substitutions, Damerau-Levenshtein considers adjacent transpositions. This version is based on an iterative version of the Wagner-Fischer algorithm.
+```python
+Levenshtein.damerau_levenshtein('kitten', 'sitting')
+# -> 3
+Levenshtein.damerau_levenshtein('kitten', 'kitten')
+# -> 0
+Levenshtein.damerau_levenshtein('', '')
+# -> 0
+```
+
+#### ```Levenshtein.recursive_levenshtein()```
+##### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings.
+```python
+Levenshtein.recursive_levenshtein('kitten', 'sitting')
+# -> 3
+Levenshtein.recursive_levenshtein('kitten', 'kitten')
+# -> 0
+Levenshtein.recursive_levenshtein('', '')
+# -> 0
+```
+
+#### ```Levenshtein.wf_levenshtein()```
+##### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings. This version uses the Wagner-Fischer algorithm.
+```python
+Levenshtein.wf_levenshtein('kitten', 'sitting')
+# -> 3
+Levenshtein.wf_levenshtein('kitten', 'kitten')
+# -> 0
+Levenshtein.wf_levenshtein('', '')
+# -> 0
+```
+
+#### ```Levenshtein.wfi_levenshtein()```
+##### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings. This version uses an iterative version of the Wagner-Fischer algorithm.
+```python
+Levenshtein.wfi_levenshtein('kitten', 'sitting')
+# -> 3
+Levenshtein.wfi_levenshtein('kitten', 'kitten')
+# -> 0
+Levenshtein.wfi_levenshtein('', '')
+# -> 0
+```
 
 ## converters:
 
@@ -298,7 +357,7 @@ Validator.validate_ipv6("0425:2CA1:0000:0000:0567:5673:23b5")
 # Authors
 
 - [@Vazno](https://www.github.com/Vazno)
-
+- [@toastdriven](https://github.com/toastdriven/pylev/blob/main/LICENSE) - Levenshtein funcs
 
 ## License 🔑
 
