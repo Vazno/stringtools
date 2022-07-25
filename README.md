@@ -89,7 +89,7 @@ The key features are:
 ## analaysers:
 
 #### ```ispangram()```
-##### <a href="#analysers">↑</a> Checks if inputed string is pangram (A pangram is a sentence using every letter of a given alphabet at least once.)
+#### <a href="#analysers">↑</a> Checks if inputed string is pangram (A pangram is a sentence using every letter of a given alphabet at least once.)
 ```python
 is_pangram('Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.') 
 # -> True
@@ -98,7 +98,7 @@ is_pangram('Hello beautiful world!')
 ```
 
 #### ```is_heterogram()```
-##### <a href="#analysers">↑</a> Checks if inputed string is heterogram (A heterogram is a string in which no letter of the alphabet occurs more than once.)
+#### <a href="#analysers">↑</a> Checks if inputed string is heterogram (A heterogram is a string in which no letter of the alphabet occurs more than once.)
 ```python
 is_heterogram("abcd")
 # -> True
@@ -143,7 +143,7 @@ is_binary("1010010101012")
 ```
 
 #### ```count_chars()```
-##### <a href="#analysers">↑</a> Returns dictionary with every character counted.
+#### <a href="#analysers">↑</a> Returns dictionary with every character counted.
 ```python
 count_chars("OOPp")
 # -> {"O": 2, "P": 1, "p": 1}
@@ -152,7 +152,7 @@ count_chars("OOPp", lowercase=True)
 ```
 
 #### ```count_words()```
-##### <a href="#analysers">↑</a> Returns an integer with every word counted.
+#### <a href="#analysers">↑</a> Returns an integer with every word counted.
 ```python
 count_words("Hello world!")
 # -> 2
@@ -161,7 +161,7 @@ count_words("This is me")
 ```
 
 #### ```Levenshtein.classic_levenshtein()```
-##### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings. This version is easier to read, but significantly slower than the version below (up to several orders of magnitude). Useful for learning, less so otherwise.
+#### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings. This version is easier to read, but significantly slower than the version below (up to several orders of magnitude). Useful for learning, less so otherwise.
 ```python
 Levenshtein.classic_levenshtein('kitten', 'sitting')
 # -> 3
@@ -172,7 +172,7 @@ Levenshtein.classic_levenshtein('', '')
 ```
 
 #### ```Levenshtein.damerau_levenshtein()```
-##### <a href="#analysers">↑</a> Calculates the Damerau-Levenshtein distance between two strings. In addition to insertions, deletions and substitutions, Damerau-Levenshtein considers adjacent transpositions. This version is based on an iterative version of the Wagner-Fischer algorithm.
+#### <a href="#analysers">↑</a> Calculates the Damerau-Levenshtein distance between two strings. In addition to insertions, deletions and substitutions, Damerau-Levenshtein considers adjacent transpositions. This version is based on an iterative version of the Wagner-Fischer algorithm.
 ```python
 Levenshtein.damerau_levenshtein('kitten', 'sitting')
 # -> 3
@@ -183,7 +183,7 @@ Levenshtein.damerau_levenshtein('', '')
 ```
 
 #### ```Levenshtein.recursive_levenshtein()```
-##### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings.
+#### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings.
 ```python
 Levenshtein.recursive_levenshtein('kitten', 'sitting')
 # -> 3
@@ -194,7 +194,7 @@ Levenshtein.recursive_levenshtein('', '')
 ```
 
 #### ```Levenshtein.wf_levenshtein()```
-##### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings. This version uses the Wagner-Fischer algorithm.
+#### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings. This version uses the Wagner-Fischer algorithm.
 ```python
 Levenshtein.wf_levenshtein('kitten', 'sitting')
 # -> 3
@@ -205,7 +205,7 @@ Levenshtein.wf_levenshtein('', '')
 ```
 
 #### ```Levenshtein.wfi_levenshtein()```
-##### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings. This version uses an iterative version of the Wagner-Fischer algorithm.
+#### <a href="#analysers">↑</a> Calculates the Levenshtein distance between two strings. This version uses an iterative version of the Wagner-Fischer algorithm.
 ```python
 Levenshtein.wfi_levenshtein('kitten', 'sitting')
 # -> 3
@@ -219,7 +219,7 @@ Levenshtein.wfi_levenshtein('', '')
 ## converters:
 
 #### ```bricks()```
-##### <a href="#converters">↑</a> Returns bricked version of a string.
+#### <a href="#converters">↑</a> Returns bricked version of a string.
 ```python
 bricks("Hello world!")
 # -> "HeLlO WoRlD!
@@ -228,7 +228,7 @@ bricks("abcdef")
 ```
 
 #### ```replaceall()```
-##### <a href="#converters">↑</a> Replaces text from given sentence and dictionary.
+#### <a href="#converters">↑</a> Replaces text from given sentence and dictionary.
 dictionary should be formatted like this:
 ```python
 {"old_string": "new_string"}
@@ -241,7 +241,7 @@ replaceall("Hello world!", {"Hello": "Sup", "world": "earth"})
 ```
 
 #### ```numerate_text()```
-##### <a href="#converters">↑</a> Numerate each line of text.
+#### <a href="#converters">↑</a> Numerate each line of text.
 ```python
 numerate_text("Hello world\nHow are you doing?")
 # -> "1 Hello World\\n2 How are you doing?"
@@ -250,7 +250,7 @@ numerate_text("First line.\nThe second line\nThe third line")
 ```
 
 #### ```remove_trailing_whitespaces()```
-##### <a href="#converters">↑</a> Remove all trailing whitespaces from sentence.
+#### <a href="#converters">↑</a> Remove all trailing whitespaces from sentence.
 
 ```python
 remove_trailing_whitespaces("text   ")
@@ -260,7 +260,7 @@ remove_trailing_whitespaces("Look at this. ")
 ```
 
 #### ```remove_leading_whitespaces()```
-##### <a href="#converters">↑</a> Remove all leading whitespaces from sentence.
+#### <a href="#converters">↑</a> Remove all leading whitespaces from sentence.
 
 ```python
 remove_leading_whitespaces("   text")
@@ -270,7 +270,7 @@ remove_leading_whitespaces(" Look at this.")
 ```
 
 #### ```binary_to_text()```
-##### <a href="#converters">↑</a> Convert binary to text (A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: 0 and 1)
+#### <a href="#converters">↑</a> Convert binary to text (A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: 0 and 1)
 
 ```python
 binary_to_text("0100100001100101011011000110110001101111")
@@ -280,7 +280,7 @@ binary_to_text("01000001")
 ```
 
 #### ```text_to_binary()```
-##### <a href="#converters">↑</a> Convert string to a binary (A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: 0 and 1)
+#### <a href="#converters">↑</a> Convert string to a binary (A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: 0 and 1)
 
 ```python
 text_to_binary("Hello")
@@ -293,7 +293,7 @@ text_to_binary("A")
 ## generators:
 
 #### ```generate_nick()```
-##### <a href="#generators">↑</a> Generate nicknames by inputed vowels, consonants, and other sounds.
+#### <a href="#generators">↑</a> Generate nicknames by inputed vowels, consonants, and other sounds.
 ```python
 for i in range(20):
 	print(stringtools.generate_nick(length=5))
@@ -321,7 +321,7 @@ for i in range(20):
 ```
 
 #### ```GeneratePassword()```
-##### <a href="#generators">↑</a> Generate very strong passwords.
+#### <a href="#generators">↑</a> Generate very strong passwords.
 ##### You can choose these options for password:
 - English (abcd...)
 - Numerals (1234...)
@@ -339,7 +339,7 @@ GeneratePassword(length=50, english=False, symbols=True, numerals=True)
 ## validators:
 
 #### ```Validator.validate_semver()```
-##### <a href="#validators">↑</a> Validate if version name follows semantic versioning. For more information go to: https://semver.org/
+#### <a href="#validators">↑</a> Validate if version name follows semantic versioning. For more information go to: https://semver.org/
 ```python
 Validator.validate_semver("1.0.0")
 # -> True
@@ -348,7 +348,7 @@ Validator.validate_semver("1.0.0.0")
 ```
 
 #### ```Validator.validate_email()```
-##### <a href="#validators">↑</a> Validate an email address.
+#### <a href="#validators">↑</a> Validate an email address.
 ```python
 Validator.validate_email("email@example.com")
 # -> True
@@ -356,7 +356,7 @@ Validator.validate_email("email@example..com")
 # -> False
 ```
 #### ```Validator.validate_url()```
-##### <a href="#validators">↑</a> Validate url address.
+#### <a href="#validators">↑</a> Validate url address.
 ```python
 Validator.validate_url("https://example.com/")
 # -> True
@@ -365,7 +365,7 @@ Validator.validate_url("example.com")
 ```
 
 #### ```Validator.validate_ipv4()```
-##### <a href="#validators">↑</a> Validate an ipv4 address.
+#### <a href="#validators">↑</a> Validate an ipv4 address.
 ```python
 Validator.validate_ipv4("127.255.255.254")
 # -> True
@@ -374,7 +374,7 @@ Validator.validate_ipv4("127.255.254")
 ```
 
 #### ```Validator.validate_ipv6()```
-##### <a href="#validators">↑</a> Validate an ipv6 address.
+#### <a href="#validators">↑</a> Validate an ipv6 address.
 ```python
 Validator.validate_ipv6("2345:0425:2CA1:0000:0000:0567:5673:23b5")
 # -> True
