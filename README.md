@@ -68,7 +68,7 @@ The key features are:
 </td><td><a href="#Validatorvalidate_email">validate_email</a>
 </td><td><a href="#Validatorvalidate_ipv4">validate_ipv4</a>
 </td><td><a href="#Validatorvalidate_ipv6">validate_ipv6</a>
-</td></tr><tr><td><a href="#validate_url">validate_url</a>
+</td></tr><tr><td><a href="#Validatorvalidate_url">validate_url</a>
 </td></tr></table>
 
 
