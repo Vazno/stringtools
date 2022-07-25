@@ -91,7 +91,8 @@ def is_binary(obj: Union[str, int]) -> bool:
 	a method of mathematical expression which uses only two symbols: 0 and 1)
 	- is_binary(100101010101) -> True
 	- is_binary("1010010101012") -> False'''
-	return all(True if num == "0" or num == "1" else False for num in str(obj))
+	allowed_chars = ["0", "1", "b", " "]
+	return all(True if num in allowed_chars else False for num in str(obj))
 
 def count_chars(sentence: str, lowercase: bool = False) -> Dict:
 	'''Returns dictionary with every character counted.

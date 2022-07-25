@@ -61,6 +61,8 @@ The key features are:
 </td><td><a href="#numerate_text">numerate_text</a>
 </td><td><a href="#remove_trailing_whitespaces">remove_trailing_whitespaces</a>
 </td></tr><tr><td><a href="#remove_leading_whitespaces">remove_leading_whitespaces</a>
+</td><td><a href="#text_to_binary">text_to_binary</a>
+</td><td><a href="#binary_to_text">binary_to_text</a>
 </td></tr></table>
 
 ### generators - Generate text inforamation.
@@ -209,6 +211,7 @@ Levenshtein.wfi_levenshtein('', '')
 # -> 0
 ```
 
+
 ## converters:
 
 #### ```bricks()```
@@ -244,7 +247,7 @@ numerate_text("First line.\nThe second line\nThe third line")
 
 #### ```remove_trailing_whitespaces()```
 ##### <a href="#converters">↑</a> Remove all trailing whitespaces from sentence.
-dictionary should be formatted like this
+
 ```python
 remove_trailing_whitespaces("text   ")
 # -> "text"
@@ -254,13 +257,35 @@ remove_trailing_whitespaces("Look at this. ")
 
 #### ```remove_leading_whitespaces()```
 ##### <a href="#converters">↑</a> Remove all leading whitespaces from sentence.
-dictionary should be formatted like this
+
 ```python
 remove_leading_whitespaces("   text")
 # -> "text"
 remove_leading_whitespaces(" Look at this.")
 # -> "Look at this."'''
 ```
+
+#### ```binary_to_text()```
+##### <a href="#converters">↑</a> Convert binary to text (A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: 0 and 1)
+
+```python
+binary_to_text("0100100001100101011011000110110001101111")
+# -> "Hello"
+binary_to_text("01000001")
+# -> "A"'''
+```
+
+#### ```text_to_binary()```
+##### <a href="#converters">↑</a> Convert string to a binary (A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: 0 and 1)
+
+```python
+text_to_binary("Hello")
+# -> 0100100001100101011011000110110001101111
+text_to_binary("A")
+# -> 01000001
+```
+
+
 ## generators:
 
 #### ```generate_nick()```
