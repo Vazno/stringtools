@@ -9,6 +9,10 @@
     <img src="https://github.com/Vazno/stringtools/actions/workflows/pytester.yml/badge.svg?" alt="Tests">
 </a>
 
+<a href="https://pepy.tech/project/stringtools" target="_blank">
+    <img src="https://pepy.tech/badge/stringtools" alt="Downloads">
+</a>
+
 <a href="https://lgtm.com/projects/g/Vazno/stringtools/context:python" target="_blank">
     <img src="https://img.shields.io/lgtm/grade/python/g/Vazno/stringtools.svg?logo=lgtm&logoWidth=18" alt="Tests">
 </a>
