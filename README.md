@@ -44,7 +44,7 @@ The key features are:
 
 ## There are 4 categories:
 ### analaysers - Analyse string.
-<p id="analysers"></p><table><tr><td><a href="#ispangram">ispangram</a>
+<p id="analysers"></p><table><tr><td><a href="#is_pangram">is_pangram</a>
 </td><td><a href="#is_heterogram">is_heterogram</a>
 </td><td><a href="#is_anagram">is_anagram</a>
 </td><td><a href="#is_palindrome">is_palindrome</a>
@@ -88,7 +88,7 @@ The key features are:
 
 ## analaysers:
 
-#### ```ispangram()```
+#### ```is_pangram()```
 #### <a href="#analysers">↑</a> Checks if inputed string is pangram (A pangram is a sentence using every letter of a given alphabet at least once.)
 ```python
 is_pangram('Watch "Jeopardy!", Alex Trebek\'s fun TV quiz game.') 
