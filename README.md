@@ -269,16 +269,6 @@ remove_leading_whitespaces(" Look at this.")
 # -> "Look at this."'''
 ```
 
-#### ```binary_to_text()```
-#### <a href="#converters">↑</a> Convert binary to text (A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: 0 and 1)
-
-```python
-binary_to_text("0100100001100101011011000110110001101111")
-# -> "Hello"
-binary_to_text("01000001")
-# -> "A"'''
-```
-
 #### ```text_to_binary()```
 #### <a href="#converters">↑</a> Convert string to a binary (A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: 0 and 1)
 
@@ -287,6 +277,16 @@ text_to_binary("Hello")
 # -> 0100100001100101011011000110110001101111
 text_to_binary("A")
 # -> 01000001
+```
+
+#### ```binary_to_text()```
+#### <a href="#converters">↑</a> Convert binary to text (A binary number is a number expressed in the base-2 numeral system or binary numeral system, a method of mathematical expression which uses only two symbols: 0 and 1)
+
+```python
+binary_to_text("0100100001100101011011000110110001101111")
+# -> "Hello"
+binary_to_text("01000001")
+# -> "A"'''
 ```
 
 
