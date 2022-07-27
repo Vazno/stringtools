@@ -22,6 +22,9 @@ from .converters import text_to_binary
 from .converters import binary_to_text
 
 
+from .general import Cases
+
+
 from .generators import generate_nick
 from .generators import GeneratePassword
 

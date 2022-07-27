@@ -40,9 +40,10 @@ The key features are:
 # Installation:
 ``pip install stringtools``
 
+
 # User’s Guide:
 
-## There are 4 categories:
+## There are 5 categories:
 ### analaysers - Analyse string.
 <p id="analysers"></p><table><tr><td><a href="#is_pangram">is_pangram</a>
 </td><td><a href="#is_heterogram">is_heterogram</a>
@@ -69,6 +70,9 @@ The key features are:
 </td><td><a href="#binary_to_text">binary_to_text</a>
 </td></tr></table>
 
+### general - General string operations.
+<p id="general"></p><table><tr><td><a href="#Cases">bricks</a>
+
 ### generators - Generate text inforamation.
 <p id="generators"></p><table><tr><td><a href="#generate_nick">generate_nick</a>
 </td><td><a href="#GeneratePassword">GeneratePassword</a>
@@ -84,7 +88,6 @@ The key features are:
 
 
 # Usage/Examples
-
 
 ## analaysers:
 
@@ -287,6 +290,67 @@ binary_to_text("0100100001100101011011000110110001101111")
 # -> "Hello"
 binary_to_text("01000001")
 # -> "A"'''
+```
+
+
+## general:
+
+#### ```Cases()```
+#### <a href="#general">↑</a> Convert strings (and dictionary keys) between cases, and analyse.
+##### Converting strings
+
+```python
+Cases.camelize("jack_in_the_box")
+# -> "jackInTheBox"
+Cases.decamelize("rubyTuesdays")
+# -> "ruby_tuesdays"
+Cases.pascalize("red_robin")
+# -> "RedRobin"
+Cases.kebabize("white_castle")
+# -> "white-castle"
+```
+
+##### Converting dictionary keys
+
+```python
+array = [{"attrOne": "foo"}, {"attrOne": "bar"}]
+Cases.decamelize(array)
+# -> [{"attr_one": "foo"}, {"attr_one": "bar"}]
+
+array = [{"attr_one": "foo"}, {"attr_one": "bar"}]
+Cases.camelize(array)
+# -> [{"attrOne": "foo"}, {"attrOne": "bar"}]
+
+array = [{'attr_one': 'foo'}, {'attr_one': 'bar'}]
+Cases.kebabize(array)
+# -> [{'attr-one': 'foo'}, {'attr-one': 'bar'}]
+
+array = [{"attr_one": "foo"}, {"attr_one": "bar"}]
+Cases.pascalize(array)
+# -> [{"AttrOne": "foo"}, {"AttrOne": "bar"}]
+```
+
+##### Checking character casing
+
+```python
+Cases.is_camelcase("illWearYourGranddadsClothes")
+# -> True
+Cases.is_pascalcase("ILookIncredible")
+# -> True
+Cases.is_snakecase("im_in_this_big_coat")
+# -> True
+Cases.is_kebabcase('from-that-shop')
+# -> True
+Cases.is_camelcase("from_that_shop")
+# -> False
+Cases.is_snakecase("downTheRoad")
+# -> False
+Cases.is_kebabcase('from_that_shop')
+# -> False
+
+# what about abbrevations, acronyms, and initialisms? No problem!
+Cases.decamelize("APIResponse")
+# -> "api_response"
 ```
 
 
