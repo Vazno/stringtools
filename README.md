@@ -71,7 +71,8 @@ The key features are:
 </td></tr></table>
 
 ### general - General string operations.
-<p id="general"></p><table><tr><td><a href="#Cases">bricks</a>
+<p id="general"></p><table><tr><td><a href="#Cases">Cases</a>
+</td></tr></table>
 
 ### generators - Generate text inforamation.
 <p id="generators"></p><table><tr><td><a href="#generate_nick">generate_nick</a>
