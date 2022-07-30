@@ -30,3 +30,14 @@ from .generators import GeneratePassword
 
 
 from .validators import Validator
+
+
+__all__ = ["is_pangram", "is_heterogram", "is_anagram", "is_palindrome", "is_tautogram", "is_binary", "count_chars", "count_words", "Levenshtein",
+
+	"bricks", "replaceall", "numerate_text", "remove_trailing_whitespaces", "remove_leading_whitespaces", "text_to_binary", "binary_to_text",
+
+	"Cases",
+
+	"generate_nick", "GeneratePassword",
+
+	"Validator"]

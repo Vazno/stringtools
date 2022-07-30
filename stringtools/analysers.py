@@ -115,7 +115,8 @@ def count_words(sentence: str) -> int:
 	else: return 0 # If sentence is empty returns 0
 
 class Levenshtein():
-	'''This class contains functions for Levenshtein distance calculations'''
+	'''This class contains functionts that calculates the Levenshtein distance between two strings.
+	The Levenshtein distance is the minimum number of edits (insertions, deletions, or substitutions) needed to transform one string into the other.'''
 	# 	Copyright (c) 2012, Daniel Lindsley
 	# All rights reserved.
 
